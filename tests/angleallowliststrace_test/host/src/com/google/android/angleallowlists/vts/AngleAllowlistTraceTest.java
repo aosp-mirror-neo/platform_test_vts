@@ -91,7 +91,6 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
     private String mANGLETracePackagePath = null;
 
     private static final String ANGLE_TRACE_TEST_PACKAGE_NAME = "com.android.angle.test";
-    private static final String DEFAULT_ANGLE_TRACE_PACKAGE_FILE_DIR = "angle_30_traces";
     private static final String ANGLE_TRACE_DATA_ON_DEVICE_DIR =
             "/storage/emulated/0/chromium_tests_root";
 
@@ -107,9 +106,13 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
             "TracePerf_(?:vulkan|native)\\.(wall_time|gpu_time): ([^\\s=]*)= ([^\\s]*) ms");
     private static final Pattern PATTERN_TRACE_NAMES = Pattern.compile("TraceTest.(.*?)\n");
 
+    private String getDefaultANGLETracePathDir() {
+        return System.getProperty("user.dir").concat("/angle_traces");
+    }
+
     private void setANGLETracePackagePath() {
         if (mANGLETracePackagePath == null) {
-            mANGLETracePackagePath = DEFAULT_ANGLE_TRACE_PACKAGE_FILE_DIR;
+            mANGLETracePackagePath = getDefaultANGLETracePathDir();
         }
     }
 
@@ -450,8 +453,8 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
         Assume.assumeTrue(isVulkan11Supported(getDevice()));
         Assume.assumeTrue(isChipSetMeetingA16Requirement(getDevice()));
         Assume.assumeTrue(isVendorAPILevelMeetingA16Requirement(getDevice()));
-        // Firstly check ANGLE is available in System Partition
-        // Install driver check app
+        //  Firstly check ANGLE is available in System Partition
+        //  Install driver check app
         installTestApp(AngleCommon.ANGLE_TEST_APP);
         // Verify ANGLE is available in system partition
         runDeviceTests(AngleCommon.ANGLE_TEST_PKG,
