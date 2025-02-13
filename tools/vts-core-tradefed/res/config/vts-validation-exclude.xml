@@ -17,7 +17,6 @@
 <configuration description="Excluded tests from vts-validation">
 
     <!-- Exclude selected test modules -->
-    <option name="compatibility:exclude-filter" value="ApkVerityTest" />
     <option name="compatibility:exclude-filter" value="CtsIkeTestCases" />
     <option name="compatibility:exclude-filter" value="CtsInstantAppTests" />
     <option name="compatibility:exclude-filter" value="CtsPackageWatchdogTestCases" />
