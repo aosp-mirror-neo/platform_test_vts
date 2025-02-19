@@ -398,17 +398,6 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
         return false;
     }
 
-    private boolean isChipSetMeetingA16Requirement(ITestDevice device) throws Exception {
-        long boardFirstAPILevel = getDevice().getIntProperty("ro.board.first_api_level", 0);
-        long boardAPILevel = getDevice().getIntProperty("ro.board.api_level", 0);
-        if (boardAPILevel == 202504) {
-            // See b/390704061 for details.
-            return true;
-        } else {
-            return boardFirstAPILevel <= 32;
-        }
-    }
-
     private boolean isVendorAPILevelMeetingA16Requirement(ITestDevice device) throws Exception {
         final int vendorApiLevel = PropertyUtil.getVsrApiLevel(device);
         return vendorApiLevel >= 202504;
@@ -451,7 +440,6 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
     @Test
     public void testAngleTraces() throws Throwable {
         Assume.assumeTrue(isVulkan11Supported(getDevice()));
-        Assume.assumeTrue(isChipSetMeetingA16Requirement(getDevice()));
         Assume.assumeTrue(isVendorAPILevelMeetingA16Requirement(getDevice()));
         //  Firstly check ANGLE is available in System Partition
         //  Install driver check app
