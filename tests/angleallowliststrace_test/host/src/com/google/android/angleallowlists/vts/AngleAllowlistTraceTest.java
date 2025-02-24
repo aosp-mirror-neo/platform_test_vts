@@ -488,6 +488,18 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
         return vendorApiLevel >= 202504;
     }
 
+    private void verifyTraceList(List<String> traceNames) {
+        Set<String> traceNamesSet = new HashSet<>();
+        for (String traceName : traceNames) {
+            traceNamesSet.add(traceName);
+        }
+        for (String requiredAppName : AngleCommon.AngleAllowlistApps.values()) {
+            assertTrue(String.format("app %s must be included in the angle trace package",
+                               requiredAppName),
+                    traceNamesSet.contains(requiredAppName));
+        }
+    }
+
     @Before
     public void setUp() throws Exception {
         // Instantiate a Helper object, which also calls Helper.preTestSetup()
@@ -572,7 +584,7 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
             // Launch angle_trace_tests app with --list-test argument to get the list of trace names
             List<String> traceNames = runAngleListTrace(mTestHelper, gtestStdoutFile);
 
-            assertFalse("trace list is not empty", traceNames.isEmpty());
+            verifyTraceList(traceNames);
 
             // Delete angle_debug_package global settings so that when trace is set to run
             // with DriverType.ANGLE, trace will use system ANGLE, not ANGLE debug apk.
