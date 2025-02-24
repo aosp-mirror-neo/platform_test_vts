@@ -338,36 +338,4 @@ public class Helper {
     public static File path(final File initialPath, final String... pathSegments) {
         return FileUtil.getFileForPath(initialPath, pathSegments);
     }
-
-    /** Retries executing |runnable.run()| |NUM_RETRIES| times. On retry, reboots the device. */
-    public void runWithRetry(final RunnableWithThrowable runnable) throws Throwable {
-        // noinspection ConstantConditions
-        for (int i = 1; i <= NUM_RETRIES; ++i) {
-            try {
-                runnable.run();
-                return;
-            } catch (final Throwable throwable) {
-                // Log it.
-                LogUtil.CLog.e(throwable);
-
-                if (i >= NUM_RETRIES) {
-                    // Give up.
-                    LogUtil.CLog.e("Giving up after %d retries.", NUM_RETRIES);
-                    throw throwable;
-                } else {
-                    // Reboot the device.
-                    mTestInformation.getDevice().reboot();
-
-                    preTestSetup();
-
-                    LogUtil.CLog.i("Waiting for %s seconds after reboot.",
-                            PAUSE_AFTER_REBOOT_MILLIS / 1000);
-                    RunUtil.getDefault().sleep(PAUSE_AFTER_REBOOT_MILLIS);
-
-                    LogUtil.CLog.w("Retry %d.", i);
-                }
-            }
-        }
-        fail("Unreachable");
-    }
 }

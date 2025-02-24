@@ -18,6 +18,7 @@ package com.google.android.angleallowlists.vts;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.android.compatibility.common.util.PropertyUtil;
 import com.android.compatibility.common.util.VsrTest;
@@ -28,7 +29,6 @@ import com.android.tradefed.log.LogUtil;
 import com.android.tradefed.testtype.DeviceJUnit4ClassRunner;
 import com.android.tradefed.testtype.junit4.BaseHostJUnit4Test;
 import com.android.tradefed.util.RunUtil;
-import com.google.android.angleallowlists.vts.AngleCommon;
 import com.google.common.io.Files;
 import java.io.File;
 import java.io.IOException;
@@ -38,6 +38,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -74,6 +75,12 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
     // Trace test max runs
     private static final int MAX_TRACE_RUN_COUNT = 5;
 
+    // Trace test FPS requirement
+    private static final double FPS_REQUIREMENT = 60.0;
+
+    private static enum DriverType { ANGLE, NATIVE }
+    ;
+
     // Properties used for ANGLE Trace test
     @Rule public final TemporaryFolder mTemporaryFolder = new TemporaryFolder();
 
@@ -95,9 +102,11 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
             "/storage/emulated/0/chromium_tests_root";
 
     private static final int WAIT_RUN_TRACES_MILLIS = 5 * 60 * 1000;
-    private HashMap<String, Double> mTracePerfFPS = new HashMap<>();
+    private HashMap<String, Double> mTracePerfANGLEFPS = new HashMap<>();
+    private HashMap<String, Double> mTracePerfNativeFPS = new HashMap<>();
 
     private HashSet<String> mSkippedTrace = new HashSet<>();
+    private HashSet<String> mTracePerfANGLEBelowRequiredFPS = new HashSet<>();
 
     // Group 1: e.g. "wall_time"
     // Group 2: e.g. "1945_air_force".
@@ -116,11 +125,13 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
         }
     }
 
-    // Invokes BaseHostJUnit4Test installPackage() API, with NUM_ATTEMPTS of retries
-    // Difference between this function and Helper.installApkFile() is this function can only
-    // install apks that exist in the same test module (e.g. apks that are specified under
-    // device_common_data or data field in Android.bp), while installApkFile() can install apks from
-    // any directory.
+    /**
+     * Invokes BaseHostJUnit4Test installPackage() API, with NUM_ATTEMPTS of retries
+     * Difference between this function and Helper.installApkFile() is this function can only
+     * install apks that exist in the same test module (e.g. apks that are specified under
+     * device_common_data or data field in Android.bp), while installApkFile() can install apks from
+     * any directory.
+     */
     private void installTestApp(String appName) throws Exception {
         for (int i = 0; i < NUM_ATTEMPTS; i++) {
             try {
@@ -210,9 +221,45 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
         return traceNames;
     }
 
+    /**
+     * Execute angle trace test on trace with traceName until either of below conditions is met:
+     * 1) trace reaches FPS_REQUIREMENT fps
+     * 2) trace is ran for totalTraceRunCount times
+     */
+    private Double runAngleTracePerfMultiTimes(final String traceName, final File gtestStdoutFile,
+            final Helper helper, final DriverType driverType, final int totalTraceRunCount)
+            throws Throwable {
+        assertTrue("totalTraceRunCount must be greater than 0", totalTraceRunCount > 0);
+        Double traceFPS = null;
+        int traceRunCount = 0;
+        do {
+            runAngleTracePerf(traceName, gtestStdoutFile, helper, driverType);
+            switch (driverType) {
+                case ANGLE:
+                    traceFPS = mTracePerfANGLEFPS.get(traceName);
+                    break;
+                case NATIVE:
+                    traceFPS = mTracePerfNativeFPS.get(traceName);
+                    break;
+                default:
+                    fail("must specify either ANGLE or NATIVE as the driverType");
+            }
+            assertTrue(traceFPS != null);
+        } while ((Double.compare(traceFPS.doubleValue(), FPS_REQUIREMENT) < 0)
+                && ++traceRunCount < totalTraceRunCount);
+
+        return traceFPS;
+    }
+
+    /**
+     * Execute angle trace test on trace with traceName
+     * This function invokes trace test packaged in com.android.angle.test apk through
+     * instrumentation commands
+     */
     private void runAngleTracePerf(final String testName, final File gtestStdoutFile,
-            final Helper helper) throws CommandException, InstrumentationCrashException,
-                                        IOException, DeviceNotAvailableException {
+            final Helper helper, final DriverType driverType)
+            throws CommandException, InstrumentationCrashException, IOException,
+                   DeviceNotAvailableException {
         // verify device state
         helper.assertDeviceStateOk();
 
@@ -240,6 +287,26 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
                         mAngleTraceTestBlobCacheDir));
 
         // Run the trace.
+        switch (driverType) {
+            case ANGLE:
+                // Set trace to run with System ANGLE
+                mTestHelper.adbShellCommandCheck(mTestHelper.WAIT_SET_GLOBAL_SETTING_MILLIS,
+                        "settings put global angle_gl_driver_selection_pkgs"
+                                + " com.android.angle.test");
+                mTestHelper.adbShellCommandCheck(mTestHelper.WAIT_SET_GLOBAL_SETTING_MILLIS,
+                        "settings put global angle_gl_driver_selection_values angle");
+                break;
+            case NATIVE:
+                // Delete global vars so that trace run on default native driver
+                mTestHelper.adbShellCommandCheck(mTestHelper.WAIT_SET_GLOBAL_SETTING_MILLIS,
+                        "settings delete global angle_gl_driver_selection_pkgs");
+                mTestHelper.adbShellCommandCheck(mTestHelper.WAIT_SET_GLOBAL_SETTING_MILLIS,
+                        "settings delete global angle_gl_driver_selection_values");
+                break;
+            default:
+                fail("must specify either ANGLE or NATIVE as the driverType");
+                break;
+        }
         runAndBlockAngleTestApp(helper,
                 String.format("--gtest_filter=TraceTest.%s "
                                 + "--use-gl=native "
@@ -252,11 +319,16 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
 
         helper.assertDeviceStateOk();
 
-        getAndLogAngleMetrics(testName, gtestStdoutFile, helper);
+        getAndLogTraceMetrics(testName, gtestStdoutFile, helper, driverType);
     }
 
-    private void getAndLogAngleMetrics(final String testName, final File gtestStdoutFile,
-            final Helper helper) throws CommandException, IOException {
+    /**
+     * Parse the trace test result and store the result
+     */
+    private void getAndLogTraceMetrics(final String testName, final File gtestStdoutFile,
+            final Helper helper, final DriverType driverType) throws CommandException, IOException {
+        String renderer = driverType.toString().toLowerCase();
+
         // cat the test output file
         helper.adbShellCommandWithStdout(Helper.WAIT_ADB_SHELL_FILE_OP_MILLIS, gtestStdoutFile,
                 String.format("run-as %s cat %s/files/out.txt", ANGLE_TRACE_TEST_PACKAGE_NAME,
@@ -309,20 +381,31 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
         for (final String metricName : metricNames) {
             final String metricValue = metricsMap.get(metricName);
 
-            // E.g. "1945_air_force.wall_time"
-            String fullMetricName = String.format("%s.%s", testName, metricName);
+            // E.g. "1945_air_force.angle.wall_time"
+            // E.g. "1945_air_force.native.wall_time"
+            String fullMetricName = String.format("%s.%s.%s", testName, renderer, metricName);
 
             helper.logMetricDouble(String.format("%s_ms", fullMetricName), metricValue, "ms");
 
             if (metricName.equals("wall_time")) {
                 // Calculate FPS
                 double wallTime = Double.parseDouble(metricValue);
+                assertTrue("wallTime should be bigger than 0", Double.compare(wallTime, 0.0) > 0);
                 double fps = 1000.0 / wallTime;
-                mTracePerfFPS.put(testName, Double.valueOf(fps));
+                switch (driverType) {
+                    case ANGLE:
+                        mTracePerfANGLEFPS.put(testName, Double.valueOf(fps));
+                        break;
+                    case NATIVE:
+                        mTracePerfNativeFPS.put(testName, Double.valueOf(fps));
+                        break;
+                    default:
+                        fail("must specify either ANGLE or NATIVE as the driverType");
+                }
 
                 // Log FPS in metrics, which will be saved as a tradefed result file later with
                 // mTestHelper.saveMetricsAsArtifact()
-                fullMetricName = String.format("%s_fps", testName);
+                fullMetricName = String.format("%s.%s.fps", testName, renderer);
                 helper.logMetricDouble(fullMetricName, String.valueOf(fps), "fps");
             }
         }
@@ -340,12 +423,14 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
         mTestHelper.uninstallAppIgnoreErrors(AngleCommon.ANGLE_TEST_PKG);
     }
 
-    // Check if device supports vulkan 1.1.
-    // If the device includes a Vulkan driver, feature list returned by
-    // "adb shell pm list features" should contain
-    // "feature:android.hardware.vulkan.level" (FEATURE_VULKAN_HARDWARE_LEVEL) and
-    // "feature:android.hardware.vulkan.version" (FEATURE_VULKAN_HARDWARE_VERSION)
-    // reference: https://source.android.com/docs/core/graphics/implement-vulkan
+    /**
+     * Check if device supports vulkan 1.1.
+     * If the device includes a Vulkan driver, feature list returned by
+     * "adb shell pm list features" should contain
+     * "feature:android.hardware.vulkan.level" (FEATURE_VULKAN_HARDWARE_LEVEL) and
+     * "feature:android.hardware.vulkan.version" (FEATURE_VULKAN_HARDWARE_VERSION)
+     * reference: https://source.android.com/docs/core/graphics/implement-vulkan
+     */
     private boolean isVulkan11Supported(ITestDevice device) throws Exception {
         final String features = device.executeShellCommand("pm list features");
 
@@ -441,8 +526,8 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
     public void testAngleTraces() throws Throwable {
         Assume.assumeTrue(isVulkan11Supported(getDevice()));
         Assume.assumeTrue(isVendorAPILevelMeetingA16Requirement(getDevice()));
-        //  Firstly check ANGLE is available in System Partition
-        //  Install driver check app
+        // Firstly check ANGLE is available in System Partition
+        // Install driver check app
         installTestApp(AngleCommon.ANGLE_TEST_APP);
         // Verify ANGLE is available in system partition
         runDeviceTests(AngleCommon.ANGLE_TEST_PKG,
@@ -489,11 +574,8 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
 
             assertFalse("trace list is not empty", traceNames.isEmpty());
 
-            // Set trace to run with System ANGLE
-            mTestHelper.adbShellCommandCheck(mTestHelper.WAIT_SET_GLOBAL_SETTING_MILLIS,
-                    "settings put global angle_gl_driver_selection_pkgs com.android.angle.test");
-            mTestHelper.adbShellCommandCheck(mTestHelper.WAIT_SET_GLOBAL_SETTING_MILLIS,
-                    "settings put global angle_gl_driver_selection_values angle");
+            // Delete angle_debug_package global settings so that when trace is set to run
+            // with DriverType.ANGLE, trace will use system ANGLE, not ANGLE debug apk.
             mTestHelper.adbShellCommandCheck(mTestHelper.WAIT_SET_GLOBAL_SETTING_MILLIS,
                     "settings delete global angle_debug_package");
 
@@ -517,34 +599,60 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
                         String.format("%s/src/tests/restricted_traces/%s/%s",
                                 ANGLE_TRACE_DATA_ON_DEVICE_DIR, traceName, traceDataFileName));
 
-                // Run trace test until either of below conditions is met:
-                // 1) trace reaches 60 fps
-                // 2) trace is ran 5 times
-                Double currentTraceFPS = null;
-                int traceRun = 0;
-                do {
-                    // Launch trace test with 3 times of retry. On retry, the device is reboot.
-                    // This allows test re-attempts in case the device lost connections during the
-                    // test.
-                    mTestHelper.runWithRetry(
-                            () -> runAngleTracePerf(traceName, gtestStdoutFile, mTestHelper));
-                    ++traceRun;
-                    currentTraceFPS = mTracePerfFPS.get(traceName);
-                } while ((currentTraceFPS != null
-                                 && Double.compare(currentTraceFPS.doubleValue(), 60.0) < 0)
-                        && traceRun < MAX_TRACE_RUN_COUNT);
+                // Run trace test on angle until either of below conditions is met:
+                // 1) trace reaches FPS_REQUIREMENT fps
+                // 2) trace is ran MAX_TRACE_RUN_COUNT times
+                Double currentTraceAngleFPS = runAngleTracePerfMultiTimes(traceName,
+                        gtestStdoutFile, mTestHelper, DriverType.ANGLE, MAX_TRACE_RUN_COUNT);
+
+                // If trace fails to reach FPS_REQUIREMENT fps on ANGLE, run trace on native driver,
+                // too. If trace also fails to reach FPS_REQUIREMENT fps on native, we treat this
+                // trace test passes on ANGLE, as ANGLE doesn't make the trace perform worse.
+                if (Double.compare(currentTraceAngleFPS.doubleValue(), FPS_REQUIREMENT) < 0) {
+                    mTracePerfANGLEBelowRequiredFPS.add(traceName);
+                    runAngleTracePerfMultiTimes(traceName, gtestStdoutFile, mTestHelper,
+                            DriverType.NATIVE, MAX_TRACE_RUN_COUNT);
+                }
             }
 
+            // Check all required traces completed successfully
             assertTrue(String.format("Not all required traces are ran, traces that are skipped: %s",
                                mSkippedTrace.toString()),
-                    mTracePerfFPS.size() == traceNames.size());
+                    mTracePerfANGLEFPS.size() == traceNames.size());
 
-            // Check test result
-            for (Map.Entry<String, Double> entry : mTracePerfFPS.entrySet()) {
-                String testName = entry.getKey();
-                Double fps = entry.getValue();
-                assertTrue(String.format("fps of trace %s must be at least 60", testName),
-                        Double.compare(fps.doubleValue(), 60.0) >= 0);
+            // Check trace test result
+            Set<String> failedTraceList = new HashSet<String>();
+            for (String traceName : mTracePerfANGLEBelowRequiredFPS) {
+                final boolean isNativeTraceDataAvailable =
+                        mTracePerfNativeFPS.containsKey(traceName);
+                assertTrue(String.format(
+                                   "trace %s runs slower than %f fps on ANGLE, we expect the trace"
+                                           + " to also execute on native driver, but there is no "
+                                           + "data from native driver run",
+                                   traceName, FPS_REQUIREMENT),
+                        isNativeTraceDataAvailable);
+                Double nativeFps = mTracePerfNativeFPS.get(traceName);
+                boolean nativeFpsReachesRequiredFPS =
+                        Double.compare(nativeFps.doubleValue(), FPS_REQUIREMENT) >= 0;
+                if (!nativeFpsReachesRequiredFPS) {
+                    LogUtil.CLog.d(
+                            "trace %s doesn't reach %f FPS on both ANGLE and NATIVE GLES driver",
+                            traceName, FPS_REQUIREMENT);
+                } else {
+                    failedTraceList.add(traceName);
+                }
+            }
+            if (!failedTraceList.isEmpty()) {
+                for (String failedTraceName : failedTraceList) {
+                    LogUtil.CLog.e("trace %s reaches %f FPS on NATIVE, native fps: %f, but fails "
+                                    + "on ANGLE, angle fps: %f",
+                            failedTraceName, FPS_REQUIREMENT,
+                            mTracePerfNativeFPS.get(failedTraceName),
+                            mTracePerfANGLEFPS.get(failedTraceName));
+                }
+                fail(String.format("There are traces that reaches %f FPS on NATIVE, but fails to "
+                                + "reach %f FPS on ANGLE: %s",
+                        FPS_REQUIREMENT, FPS_REQUIREMENT, failedTraceList.toString()));
             }
         } finally {
             mTestHelper.saveMetricsAsArtifact();
