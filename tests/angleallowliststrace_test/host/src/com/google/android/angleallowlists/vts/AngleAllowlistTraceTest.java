@@ -97,6 +97,12 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
     @Option(name = "angle_trace_package_path", description = "path to angle trace package files")
     private String mANGLETracePackagePath = null;
 
+    // Allows partners to run tests on devices that haven't fully configured with proper vendor api
+    // b/377337787#comment25
+    @Option(name = "bypass-vendor-api-requirement",
+            description = "whether to bypass the vendor api requirement check")
+    private boolean mBypassVendorApiRequirement = false;
+
     private static final String ANGLE_TRACE_TEST_PACKAGE_NAME = "com.android.angle.test";
     private static final String ANGLE_TRACE_DATA_ON_DEVICE_DIR =
             "/storage/emulated/0/chromium_tests_root";
@@ -484,6 +490,9 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
     }
 
     private boolean isVendorAPILevelMeetingA16Requirement(ITestDevice device) throws Exception {
+        if (mBypassVendorApiRequirement) {
+            return true;
+        }
         final int vendorApiLevel = PropertyUtil.getVsrApiLevel(device);
         return vendorApiLevel >= 202504;
     }
