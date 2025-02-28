@@ -502,7 +502,7 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
         for (String traceName : traceNames) {
             traceNamesSet.add(traceName);
         }
-        for (String requiredAppName : AngleCommon.AngleAllowlistApps.values()) {
+        for (String requiredAppName : AngleAllowlist.apps.values()) {
             assertTrue(String.format("app %s must be included in the angle trace package",
                                requiredAppName),
                     traceNamesSet.contains(requiredAppName));

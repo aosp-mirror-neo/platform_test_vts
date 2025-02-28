@@ -31,3 +31,8 @@ java_test_host {
         ":VtsAngleTestApp",
     ],
 }
+
+java_test_helper_library {
+    name: "AngleAllowlistLibrary",
+    srcs: ["src/com/google/android/angleallowlists/vts/AngleAllowlist.java"],
+}
