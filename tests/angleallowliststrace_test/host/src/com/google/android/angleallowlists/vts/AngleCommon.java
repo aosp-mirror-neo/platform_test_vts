@@ -33,26 +33,6 @@ public class AngleCommon {
     public static final String ANGLE_DRIVER_TEST_CLASS = "VtsAngleTestCase";
     public static final String ANGLE_DRIVER_TEST_LOCATION_METHOD = "testAngleLocation";
 
-    public static final Map<String, String> AngleAllowlistApps = new HashMap<>();
-
-    // allow list apps are defined per GMS requirement: b/369880861
-    static {
-        AngleAllowlistApps.put("com.dreamgames.royalmatch", "royal_match");
-        AngleAllowlistApps.put("com.dts.freefiremax", "free_fire_max");
-        AngleAllowlistApps.put("com.dxx.firenow", "survivor_io");
-        AngleAllowlistApps.put("com.gramgames.mergedragons", "merge_dragons");
-        AngleAllowlistApps.put("com.ludo.king", "ludo_king");
-        AngleAllowlistApps.put("com.mojang.minecraftpe", "minecraft_bedrock");
-        AngleAllowlistApps.put("com.my.defense", "rush_royale");
-        AngleAllowlistApps.put("com.nianticlabs.pokemongo", "pokemon_go");
-        AngleAllowlistApps.put("com.nintendo.zaka", "mario_kart_tour");
-        AngleAllowlistApps.put("com.os.airforce", "1945_air_force");
-        AngleAllowlistApps.put("com.playrix.fishdomdd.gplay", "fishdom");
-        AngleAllowlistApps.put("io.teslatech.callbreak", "callbreak");
-        AngleAllowlistApps.put("jp.konami.prospia", "professional_baseball_spirits");
-        AngleAllowlistApps.put("net.peakgames.toonblast", "toon_blast");
-    }
-
     static void setGlobalSetting(ITestDevice device, String globalSetting, String value)
             throws Exception {
         device.setSetting("global", globalSetting, value);
