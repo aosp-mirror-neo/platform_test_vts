@@ -34,4 +34,7 @@
     <option name="compatibility:exclude-filter" value="VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MalformedUTF8Test2/*"/>
     <option name="compatibility:exclude-filter" value="VtsHalConfirmationUIV1_0TargetTest *ConfirmationUIHidlTest.MalformedUTF8Test3/*"/>
 
+    <!-- b/366152596: Exclude useAfterClose test cases -->
+    <option name="compatibility:exclude-filter" value="VtsHalAudioEffectV* *UseAfterClose_1*"/>
+
 </configuration>
