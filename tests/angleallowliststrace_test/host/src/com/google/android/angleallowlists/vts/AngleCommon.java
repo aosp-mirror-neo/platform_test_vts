@@ -16,6 +16,8 @@
 package com.google.android.angleallowlists.vts;
 
 import com.android.tradefed.device.ITestDevice;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AngleCommon {
     // Settings.Global
