@@ -20,6 +20,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.android.compatibility.common.util.FeatureUtil;
 import com.android.compatibility.common.util.PropertyUtil;
 import com.android.compatibility.common.util.VsrTest;
 import com.android.tradefed.config.Option;
@@ -545,6 +546,7 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
     @VsrTest(requirements = {"VSR-5.1"})
     @Test
     public void testAngleTraces() throws Throwable {
+        Assume.assumeFalse(FeatureUtil.isTV(getDevice()));
         Assume.assumeTrue(isVulkan11Supported(getDevice()));
         Assume.assumeTrue(isVendorAPILevelMeetingA16Requirement(getDevice()));
         // Firstly check ANGLE is available in System Partition
