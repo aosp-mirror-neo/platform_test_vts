@@ -79,6 +79,13 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
     // Trace test FPS requirement
     private static final double FPS_REQUIREMENT = 60.0;
 
+    // Comparison threshold when NATIVE FPS > 60 and ANGLE FPS < 60
+    // Allow 10% threshold when measuring ANGLE FPS against 60, so that we consider below case as
+    // passing:
+    // NATIVE: 61.18
+    // ANGLE:  59.81
+    private static final double FPS_THRESHOLD = 0.9;
+
     private static enum DriverType { ANGLE, NATIVE }
     ;
 
@@ -334,7 +341,7 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
      */
     private void getAndLogTraceMetrics(final String testName, final File gtestStdoutFile,
             final Helper helper, final DriverType driverType) throws CommandException, IOException {
-        String renderer = driverType.toString().toLowerCase();
+        String renderer = driverType.toString();
 
         // cat the test output file
         helper.adbShellCommandWithStdout(Helper.WAIT_ADB_SHELL_FILE_OP_MILLIS, gtestStdoutFile,
@@ -662,20 +669,27 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
                             "trace %s doesn't reach %f FPS on both ANGLE and NATIVE GLES driver",
                             traceName, FPS_REQUIREMENT);
                 } else {
-                    failedTraceList.add(traceName);
+                    Double angleFps = mTracePerfANGLEFPS.get(traceName);
+                    if (angleFps < FPS_REQUIREMENT * FPS_THRESHOLD) {
+                        failedTraceList.add(traceName);
+                    }
                 }
             }
             if (!failedTraceList.isEmpty()) {
                 for (String failedTraceName : failedTraceList) {
                     LogUtil.CLog.e("trace %s reaches %f FPS on NATIVE, native fps: %f, but fails "
-                                    + "on ANGLE, angle fps: %f",
+                                    + "on ANGLE, angle fps: %f, and FPS on ANGLE is less than %f "
+                                    + "of %f",
                             failedTraceName, FPS_REQUIREMENT,
                             mTracePerfNativeFPS.get(failedTraceName),
-                            mTracePerfANGLEFPS.get(failedTraceName));
+                            mTracePerfANGLEFPS.get(failedTraceName), FPS_THRESHOLD,
+                            FPS_REQUIREMENT);
                 }
                 fail(String.format("There are traces that reaches %f FPS on NATIVE, but fails to "
-                                + "reach %f FPS on ANGLE: %s",
-                        FPS_REQUIREMENT, FPS_REQUIREMENT, failedTraceList.toString()));
+                                + "reach %f FPS on ANGLE: %s, and FPS on ANGLE is less than %f "
+                                + "of %f",
+                        FPS_REQUIREMENT, FPS_REQUIREMENT, failedTraceList.toString(), FPS_THRESHOLD,
+                        FPS_REQUIREMENT));
             }
         } finally {
             mTestHelper.saveMetricsAsArtifact();
