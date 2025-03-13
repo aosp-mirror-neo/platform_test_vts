@@ -430,6 +430,10 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
         mTestHelper.uninstallAppIgnoreErrors(AngleCommon.ANGLE_TEST_PKG);
     }
 
+    private boolean isLowRamDevice(ITestDevice device) throws Exception {
+        return "true".equals(device.getProperty("ro.config.low_ram"));
+    }
+
     /**
      * Check if device supports vulkan 1.1.
      * If the device includes a Vulkan driver, feature list returned by
@@ -546,6 +550,7 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
     @VsrTest(requirements = {"VSR-5.1"})
     @Test
     public void testAngleTraces() throws Throwable {
+        Assume.assumeFalse(isLowRamDevice(getDevice()));
         Assume.assumeFalse(FeatureUtil.isTV(getDevice()));
         Assume.assumeTrue(isVulkan11Supported(getDevice()));
         Assume.assumeTrue(isVendorAPILevelMeetingA16Requirement(getDevice()));
