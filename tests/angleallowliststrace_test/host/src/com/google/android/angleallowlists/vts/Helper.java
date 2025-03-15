@@ -76,8 +76,6 @@ public class Helper {
      */
     private final BufferedWriter mMetricsLog;
 
-    private final TestInformation mTestInformation;
-
     // These are timeout values used to wait for certain types of actions to complete.
     public static final int WAIT_INSTALL_APK_MILLIS = 120 * 1000;
     public static final int WAIT_SET_GLOBAL_SETTING_MILLIS = 5 * 1000;
@@ -103,8 +101,6 @@ public class Helper {
         mMethodName = methodName;
         mMetricsTextLogFile = temporaryFolder.newFile(String.format("metrics_%s.txt", mMethodName));
         mMetricsLog = new BufferedWriter(new FileWriter(mMetricsTextLogFile));
-
-        mTestInformation = testInformation;
 
         preTestSetup();
         assertDeviceStateOk();
