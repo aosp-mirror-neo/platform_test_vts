@@ -30,6 +30,7 @@ import com.android.tradefed.log.LogUtil;
 import com.android.tradefed.testtype.DeviceJUnit4ClassRunner;
 import com.android.tradefed.testtype.junit4.BaseHostJUnit4Test;
 import com.android.tradefed.util.RunUtil;
+import com.android.tradefed.util.SearchArtifactUtil;
 import com.google.common.io.Files;
 import java.io.File;
 import java.io.IOException;
@@ -130,7 +131,25 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
     private static final Pattern PATTERN_TRACE_NAMES = Pattern.compile("TraceTest.(.*?)\n");
 
     private String getDefaultANGLETracePathDir() {
-        return System.getProperty("user.dir").concat("/angle_traces");
+        // Users should follow instructions at
+        // https://docs.partner.android.com/gms/testing/eap/vts-eap to download the angle_traces/
+        // test data and place it under the android-vts/testcases/AngleAllowlistTraceTest/ test
+        // module directory. First version of instructions states that the angle_traces/ test data
+        // should be placed under android-vts/ root directory. To serve as a temporary fallback
+        // solution for users who are still following the first version instructions, add VTS_ROOT
+        // as an alternative search path if SearchArtifactUtil.searchFile fails to find angle_traces
+        // in all other directories.
+        boolean isVTSROOTVarAvailable = System.getProperty("VTS_ROOT") != null;
+        List<File> alternativeSearchDirs = new ArrayList();
+        if (isVTSROOTVarAvailable) {
+            alternativeSearchDirs.add(new File(System.getProperty("VTS_ROOT")));
+        }
+
+        final File angleTracePath = SearchArtifactUtil.searchFile("angle_traces", false, null,
+                isVTSROOTVarAvailable ? alternativeSearchDirs : null, null, getTestInformation(),
+                true);
+        assertTrue("angle_traces not found", angleTracePath != null);
+        return angleTracePath.getAbsolutePath();
     }
 
     private void setANGLETracePackagePath() {
