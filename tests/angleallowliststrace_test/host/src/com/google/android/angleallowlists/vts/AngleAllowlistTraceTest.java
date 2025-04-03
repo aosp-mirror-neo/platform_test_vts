@@ -142,7 +142,7 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
         boolean isVTSROOTVarAvailable = System.getProperty("VTS_ROOT") != null;
         List<File> alternativeSearchDirs = new ArrayList();
         if (isVTSROOTVarAvailable) {
-            alternativeSearchDirs.add(new File(System.getProperty("VTS_ROOT")));
+            alternativeSearchDirs.add(new File(System.getProperty("VTS_ROOT"), "android-vts"));
         }
 
         final File angleTracePath = SearchArtifactUtil.searchFile("angle_traces", false, null,
