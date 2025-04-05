@@ -29,7 +29,6 @@ public class AngleAllowlist {
         apps.put("com.ludo.king", "ludo_king");
         apps.put("com.mojang.minecraftpe", "minecraft_bedrock");
         apps.put("com.my.defense", "rush_royale");
-        apps.put("com.nianticlabs.pokemongo", "pokemon_go");
         apps.put("com.nintendo.zaka", "mario_kart_tour");
         apps.put("com.os.airforce", "1945_air_force");
         apps.put("com.playrix.fishdomdd.gplay", "fishdom");
