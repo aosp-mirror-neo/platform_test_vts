@@ -607,6 +607,7 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
             // Launch angle_trace_tests app with --list-test argument to get the list of trace names
             List<String> traceNames = runAngleListTrace(mTestHelper, gtestStdoutFile);
 
+            // Verify the traces in angle_traces package contains all required ANGLE allowlist apps
             verifyTraceList(traceNames);
 
             // Delete angle_debug_package global settings so that when trace is set to run
@@ -614,8 +615,8 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
             mTestHelper.adbShellCommandCheck(mTestHelper.WAIT_SET_GLOBAL_SETTING_MILLIS,
                     "settings delete global angle_debug_package");
 
-            // Run all the trace tests.
-            for (final String traceName : traceNames) {
+            // Run all the trace test of apps required on ANGLE allowlist.
+            for (final String traceName : AngleAllowlist.apps.values()) {
                 // push the "<traceName>.json" onto the device
                 String traceJsonFileName = String.format("%s.json", traceName);
                 final File traceJsonFile = mTestHelper.path(angleTraceTestPackage, "src", "tests",
@@ -653,7 +654,7 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
             // Check all required traces completed successfully
             assertTrue(String.format("Not all required traces are ran, traces that are skipped: %s",
                                mSkippedTrace.toString()),
-                    mTracePerfANGLEFPS.size() == traceNames.size());
+                    mTracePerfANGLEFPS.size() == AngleAllowlist.apps.size());
 
             // Check trace test result
             Set<String> failedTraceList = new HashSet<String>();
