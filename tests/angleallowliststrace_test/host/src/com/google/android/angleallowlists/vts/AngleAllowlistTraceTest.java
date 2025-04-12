@@ -543,9 +543,15 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
     @Before
     public void setUp() throws Exception {
         // Instantiate a Helper object, which also calls Helper.preTestSetup()
-        // that sets the device ready for tests
+        // that sets the device ready for tests.
+        // Helper object needs to be instantiated first, before assumption check, because
+        // the uninstallTestApps() in tearDown() needs the Helper object.
         mTestHelper = new Helper(getTestInformation(), mTemporaryFolder, mMetrics, mLogData,
                 mTestName.getMethodName());
+        Assume.assumeFalse(isLowRamDevice(getDevice()));
+        Assume.assumeFalse(FeatureUtil.isTV(getDevice()));
+        Assume.assumeTrue(isVulkan11Supported(getDevice()));
+        Assume.assumeTrue(isVendorAPILevelMeetingA16Requirement(getDevice()));
 
         // Query current_user
         final File cmdStdOutFile = new File(mTemporaryFolder.getRoot(), "cmdStdOut.txt");
@@ -576,10 +582,6 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
     @VsrTest(requirements = {"VSR-5.1"})
     @Test
     public void testAngleTraces() throws Throwable {
-        Assume.assumeFalse(isLowRamDevice(getDevice()));
-        Assume.assumeFalse(FeatureUtil.isTV(getDevice()));
-        Assume.assumeTrue(isVulkan11Supported(getDevice()));
-        Assume.assumeTrue(isVendorAPILevelMeetingA16Requirement(getDevice()));
         // Firstly check ANGLE is available in System Partition
         // Install driver check app
         installTestApp(AngleCommon.ANGLE_TEST_APP);
