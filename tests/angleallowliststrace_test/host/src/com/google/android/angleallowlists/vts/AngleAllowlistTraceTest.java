@@ -112,6 +112,10 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
             description = "whether to bypass the vendor api requirement check")
     private boolean mBypassVendorApiRequirement = false;
 
+    @Option(name = "run-with-angle-sideload-apk",
+            description = "whether to run trace tests with sideloaded angle apk")
+    private boolean mRunWithAngleSideloadApk = false;
+
     private static final String ANGLE_TRACE_TEST_PACKAGE_NAME = "com.android.angle.test";
     private static final String ANGLE_TRACE_DATA_ON_DEVICE_DIR =
             "/storage/emulated/0/chromium_tests_root";
@@ -322,7 +326,6 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
         // Run the trace.
         switch (driverType) {
             case ANGLE:
-                // Set trace to run with System ANGLE
                 mTestHelper.adbShellCommandCheck(mTestHelper.WAIT_SET_GLOBAL_SETTING_MILLIS,
                         "settings put global angle_gl_driver_selection_pkgs"
                                 + " com.android.angle.test");
@@ -635,6 +638,14 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
             // with DriverType.ANGLE, trace will use system ANGLE, not ANGLE debug apk.
             mTestHelper.adbShellCommandCheck(mTestHelper.WAIT_SET_GLOBAL_SETTING_MILLIS,
                     "settings delete global angle_debug_package");
+
+            // Unless user requests to run with ANGLE side load apk, we switch from system ANGLE to
+            // ANGLE debug apk. Note this requires users install the ANGLE debug apk on the device.
+            // If ANGLE debug apk is not present on the device, system ANGLE will be loaded instead.
+            if (mRunWithAngleSideloadApk) {
+                mTestHelper.adbShellCommandCheck(mTestHelper.WAIT_SET_GLOBAL_SETTING_MILLIS,
+                        "settings put global angle_debug_package org.chromium.angle");
+            }
 
             // Run all the trace test of apps required on ANGLE allowlist.
             for (final String traceName : AngleAllowlist.apps.values()) {
