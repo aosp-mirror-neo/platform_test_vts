@@ -300,14 +300,14 @@ public class VulkanTest extends BaseHostJUnit4Test {
     }
 
     private boolean mustChipsetMeetA15Requirement() throws Exception {
-        final long boardApiLevel = getDevice().getIntProperty("ro.board.api_level", Build.VENDOR_24Q2);
+        final long boardApiLevel = getDevice().getIntProperty("ro.board.api_level", 0);
         return boardApiLevel >= Build.VENDOR_24Q2;
     }
 
     private boolean mustChipsetMeetA16Requirement() throws Exception {
         // All SoCs starting or restarting GRF with A16, or not in GRF
-        final long boardFirstApiLevel = getDevice().getIntProperty("ro.board.first_api_level", Build.VENDOR_25Q2);
-        final long boardApiLevel = getDevice().getIntProperty("ro.board.api_level", Build.VENDOR_25Q2);
+        final long boardFirstApiLevel = getDevice().getIntProperty("ro.board.first_api_level", 0);
+        final long boardApiLevel = getDevice().getIntProperty("ro.board.api_level", 0);
 
         return boardApiLevel >= Build.VENDOR_25Q2 ||            // Chipsets at A16 level
             (boardFirstApiLevel <= 32 && boardApiLevel < 34);   // Old chipsets that would need to reenter at A16
