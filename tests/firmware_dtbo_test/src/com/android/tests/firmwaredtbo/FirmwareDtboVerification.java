@@ -15,6 +15,7 @@
  */
 package com.android.tests.firmwaredtbo;
 
+import android.platform.test.annotations.RequiresDevice;
 import com.android.tradefed.device.ITestDevice;
 import com.android.tradefed.log.LogUtil.CLog;
 import com.android.tradefed.testtype.DeviceJUnit4ClassRunner;
@@ -92,6 +93,7 @@ public class FirmwareDtboVerification extends BaseHostJUnit4Test {
     }
 
     /* Validates DTBO partition using mkdtboimg */
+    @RequiresDevice
     @Test
     public void testCheckDTBOPartition() throws Exception {
         // Dump dtbo image from device.
@@ -196,6 +198,7 @@ public class FirmwareDtboVerification extends BaseHostJUnit4Test {
     }
 
     /* Verifies application of DT overlays. */
+    @RequiresDevice
     @Test
     public void testVerifyOverlay() throws Exception {
         // testVerifyOverlay depend on testCheckDTBOPartition, check if previous test artifacts
