@@ -169,7 +169,6 @@
     <!-- VtsAidlCameraServiceTargetTest -->
     <option name="compatibility:include-filter" value="VtsAidlCameraServiceTargetTest PerInstance/VtsAidlCameraServiceTargetTest#BasicCameraLifeCycleTest/0_android_frameworks_cameraservice_service_ICameraService_default"/>
     <!-- VtsAidlHalCameraProvider_TargetTest -->
-    <option name="compatibility:include-filter" value="VtsAidlHalCameraProvider_TargetTest PerInstance/CameraAidlTest#configureStreamsAvailableOutputs/0_android_hardware_camera_provider_ICameraProvider_internal_0"/>
     <option name="compatibility:include-filter" value="VtsAidlHalCameraProvider_TargetTest PerInstance/CameraAidlTest#process10BitDynamicRangeRequest/0_android_hardware_camera_provider_ICameraProvider_internal_0"/>
     <option name="compatibility:include-filter" value="VtsAidlHalCameraProvider_TargetTest PerInstance/CameraAidlTest#processCaptureRequestBurstISO/0_android_hardware_camera_provider_ICameraProvider_internal_0"/>
     <option name="compatibility:include-filter" value="VtsAidlHalCameraProvider_TargetTest PerInstance/CameraAidlTest#processCaptureRequestPreview/0_android_hardware_camera_provider_ICameraProvider_internal_0"/>
@@ -187,9 +186,7 @@
     <option name="compatibility:include-filter" value="VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#CleanupConnectionsOnInitialize/0_android_hardware_sensors_ISensors_default"/>
     <option name="compatibility:include-filter" value="VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#DirectChannelGralloc/0_android_hardware_sensors_ISensors_default"/>
     <option name="compatibility:include-filter" value="VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#FlushSensor/0_android_hardware_sensors_ISensors_default"/>
-    <option name="compatibility:include-filter" value="VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#InjectSensorEventData/0_android_hardware_sensors_ISensors_default"/>
     <option name="compatibility:include-filter" value="VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#NoStaleEvents/0_android_hardware_sensors_ISensors_default"/>
-    <option name="compatibility:include-filter" value="VtsAidlHalSensorsTargetTest Sensors/SensorsAidlTest#SensorListValid/0_android_hardware_sensors_ISensors_default"/>
     <!-- VtsAidlHwCryptoOperationsTests -->
     <option name="compatibility:include-filter" value="VtsAidlHwCryptoOperationsTests VtsAidlHwCryptoOperationsTests#aes_simple_cbcs_test"/>
     <option name="compatibility:include-filter" value="VtsAidlHwCryptoOperationsTests VtsAidlHwCryptoOperationsTests#check_cbcs_wrong_key_types"/>
@@ -224,9 +221,6 @@
     <option name="compatibility:include-filter" value="VtsAidlUsbHostTest com.android.tests.usbport.VtsAidlUsbHostTest#testAoaControlDirectoryExists"/>
     <option name="compatibility:include-filter" value="VtsAidlUsbHostTest com.android.tests.usbport.VtsAidlUsbHostTest#testAoaDirectoryExists"/>
     <option name="compatibility:include-filter" value="VtsAidlUsbHostTest com.android.tests.usbport.VtsAidlUsbHostTest#testAoaDirectoryMountedAsFfs"/>
-    <!-- VtsGpuTests -->
-    <option name="compatibility:include-filter" value="VtsGpuTests com.android.gpu.vts.VulkanTest#checkSkiaVulkanSupport"/>
-    <option name="compatibility:include-filter" value="VtsGpuTests com.android.gpu.vts.VulkanTest#checkVulkanDeqpLevelIsHighEnough"/>
     <!-- VtsHalAudioCoreTargetTest -->
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreBluetoothA2dpTest/AudioCoreBluetoothA2dp#Enabled/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreBluetoothA2dpTest/AudioCoreBluetoothA2dp#OffloadReconfiguration/2_android_hardware_audio_core_IModule_r_submix"/>
@@ -414,6 +408,8 @@
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioStreamOutTest/AudioStreamOut#UpdateHwAvSyncId/1_android_hardware_audio_core_IModule_default"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioStreamOutTest/AudioStreamOut#UpdateHwAvSyncId/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioStreamOutTest/AudioStreamOut#UpdateOffloadMetadata/2_android_hardware_audio_core_IModule_r_submix"/>
+    <!-- VtsHalBiometricsFingerprintTargetTest -->
+    <option name="compatibility:include-filter" value="VtsHalBiometricsFingerprintTargetTest IFingerprint/Fingerprint#GetSensorPropsWorksTest/0_android_hardware_biometrics_fingerprint_IFingerprint_default"/>
     <!-- VtsHalBluetoothAudioTargetTest -->
     <option name="compatibility:include-filter" value="VtsHalBluetoothAudioTargetTest PerInstance/BluetoothAudioProviderLeAudioOutputHardwareAidl#GetAsymmetricAseConfiguration_Multidirectional/0_android_hardware_bluetooth_audio_IBluetoothAudioProviderFactory_default"/>
     <!-- VtsHalBluetoothTargetTest -->
@@ -494,21 +490,16 @@
     <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestTest#NonEmptyRequest_testMode/0_android_hardware_security_keymint_IRemotelyProvisionedComponent_default"/>
     <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestV2Test#DeviceInfo/0_android_hardware_security_keymint_IRemotelyProvisionedComponent_default"/>
     <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestV2Test#DeviceInfo/1_android_hardware_security_keymint_IRemotelyProvisionedComponent_strongbox"/>
-    <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestV2Test#EmptyRequest/0_android_hardware_security_keymint_IRemotelyProvisionedComponent_default"/>
     <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestV2Test#EmptyRequest/1_android_hardware_security_keymint_IRemotelyProvisionedComponent_strongbox"/>
-    <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestV2Test#NonEmptyRequest/0_android_hardware_security_keymint_IRemotelyProvisionedComponent_default"/>
     <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestV2Test#NonEmptyRequest/1_android_hardware_security_keymint_IRemotelyProvisionedComponent_strongbox"/>
     <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestV2Test#NonEmptyRequestCorruptMac/1_android_hardware_security_keymint_IRemotelyProvisionedComponent_strongbox"/>
-    <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestV2Test#NonEmptyRequestMultipleKeys/0_android_hardware_security_keymint_IRemotelyProvisionedComponent_default"/>
     <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestV2Test#NonEmptyRequestMultipleKeys/1_android_hardware_security_keymint_IRemotelyProvisionedComponent_strongbox"/>
-    <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestV2Test#NonEmptyRequestReproducible/0_android_hardware_security_keymint_IRemotelyProvisionedComponent_default"/>
     <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestV2Test#NonEmptyRequestReproducible/1_android_hardware_security_keymint_IRemotelyProvisionedComponent_strongbox"/>
     <!-- VtsHalUsbGadgetV2_0HostTest -->
     <option name="compatibility:include-filter" value="VtsHalUsbGadgetV2_0HostTest com.android.tests.usbgadget.VtsHalUsbGadgetV2_0HostTest#testMIDI"/>
     <!-- VtsHalVibratorTargetTest -->
     <option name="compatibility:include-filter" value="VtsHalVibratorTargetTest Vibrator/VibratorAidl#ComposeCallback/TOP_LEVEL_VIBRATOR_0"/>
     <option name="compatibility:include-filter" value="VtsHalVibratorTargetTest Vibrator/VibratorAidl#OnWithCallback/TOP_LEVEL_VIBRATOR_0"/>
-    <option name="compatibility:include-filter" value="VtsHalVibratorTargetTest Vibrator/VibratorAidl#ValidateEffect/TOP_LEVEL_VIBRATOR_0"/>
     <option name="compatibility:include-filter" value="VtsHalVibratorTargetTest Vibrator/VibratorAidl#ValidateEffectWithCallback/TOP_LEVEL_VIBRATOR_0"/>
     <!-- VtsHalWifiApIfaceTargetTest -->
     <option name="compatibility:include-filter" value="VtsHalWifiApIfaceTargetTest WifiTest/WifiApIfaceAidlTest#GetBridgedInstances/0_android_hardware_wifi_IWifi_default"/>
@@ -550,13 +541,11 @@
     <!-- VtsHalWifiSupplicantStaIfaceTargetTest -->
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantStaIfaceTargetTest Supplicant/SupplicantStaIfaceAidlTest#GetConnectionCapabilities/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantStaIfaceTargetTest Supplicant/SupplicantStaIfaceAidlTest#GetKeyMgmtCapabilities/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
-    <option name="compatibility:include-filter" value="VtsHalWifiSupplicantStaIfaceTargetTest Supplicant/SupplicantStaIfaceAidlTest#GetName/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantStaIfaceTargetTest Supplicant/SupplicantStaIfaceAidlTest#GetWpaDriverCapabilities/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantStaIfaceTargetTest Supplicant/SupplicantStaIfaceAidlTest#RegisterCallback/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <!-- VtsHalWifiSupplicantStaNetworkTargetTest -->
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantStaNetworkTargetTest Supplicant/SupplicantStaNetworkAidlTest#GetInterfaceName/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantStaNetworkTargetTest Supplicant/SupplicantStaNetworkAidlTest#GetType/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
-    <option name="compatibility:include-filter" value="VtsHalWifiSupplicantStaNetworkTargetTest Supplicant/SupplicantStaNetworkAidlTest#RegisterCallback/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantStaNetworkTargetTest Supplicant/SupplicantStaNetworkAidlTest#SetGetEapMethod/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantStaNetworkTargetTest Supplicant/SupplicantStaNetworkAidlTest#SetGetEapPhase2Method/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantStaNetworkTargetTest Supplicant/SupplicantStaNetworkAidlTest#SetGetIdStr/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
@@ -594,11 +583,9 @@
     <option name="compatibility:include-filter" value="keystore2_client_tests keystore2_client_tests#keystore2_client_grant_key_tests::keystore2_grant_key_with_perm_none"/>
     <option name="compatibility:include-filter" value="keystore2_client_tests keystore2_client_tests#keystore2_client_grant_key_tests::keystore2_ungrant_fails_with_non_existing_key_expect_key_not_found_error"/>
     <option name="compatibility:include-filter" value="keystore2_client_tests keystore2_client_tests#keystore2_client_grant_key_tests::keystore2_ungrant_key_success"/>
-    <option name="compatibility:include-filter" value="keystore2_client_tests keystore2_client_tests#keystore2_client_rsa_key_tests::encrypt_key_oaep_md5_no_mgf_4096"/>
     <option name="compatibility:include-filter" value="keystore2_client_tests keystore2_client_tests#keystore2_client_rsa_key_tests::encrypt_key_oaep_md5_sha1_4096"/>
     <option name="compatibility:include-filter" value="keystore2_client_tests keystore2_client_tests#keystore2_client_rsa_key_tests::encrypt_key_oaep_md5_sha384_4096"/>
     <option name="compatibility:include-filter" value="keystore2_client_tests keystore2_client_tests#keystore2_client_rsa_key_tests::encrypt_key_oaep_sha1_md5_4096"/>
-    <option name="compatibility:include-filter" value="keystore2_client_tests keystore2_client_tests#keystore2_client_rsa_key_tests::encrypt_key_oaep_sha1_sha224_4096"/>
     <option name="compatibility:include-filter" value="keystore2_client_tests keystore2_client_tests#keystore2_client_rsa_key_tests::encrypt_key_oaep_sha224_sha1_4096"/>
     <option name="compatibility:include-filter" value="keystore2_client_tests keystore2_client_tests#keystore2_client_rsa_key_tests::encrypt_key_oaep_sha224_sha384_4096"/>
     <option name="compatibility:include-filter" value="keystore2_client_tests keystore2_client_tests#keystore2_client_rsa_key_tests::encrypt_key_oaep_sha224_sha512_4096"/>
@@ -616,7 +603,6 @@
     <option name="compatibility:include-filter" value="netd_integration_test KernelTest#TestMinRequiredLTS_4_19"/>
     <option name="compatibility:include-filter" value="netd_integration_test NetdBinderTest#SocketDestroy"/>
     <option name="compatibility:include-filter" value="netd_integration_test NetdBinderTest#SocketDestroyLinkLocal"/>
-    <option name="compatibility:include-filter" value="netd_integration_test NetdSELinuxTest#CheckProperMTULabels"/>
     <!-- vts_gki_compliance_test -->
     <option name="compatibility:include-filter" value="vts_gki_compliance_test KernelVersionTest#AgainstPlatformRelease"/>
     <!-- vts_kernelLifetimes_validate_test -->
