@@ -45,4 +45,8 @@ public class Util {
                 && !FeatureUtil.isAutomotive(device)
                 && !FeatureUtil.hasSystemFeature(device, FEATURE_PC);
     }
+
+    public static boolean isPC(final ITestDevice device) throws DeviceNotAvailableException {
+        return FeatureUtil.hasSystemFeature(device, FEATURE_PC);
+    }
 }
