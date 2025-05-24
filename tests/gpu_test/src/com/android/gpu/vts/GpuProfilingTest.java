@@ -72,7 +72,8 @@ public class GpuProfilingTest extends BaseHostJUnit4Test {
         assumeTrue("Test does not apply for API level lower than S", apiLevel >= Build.SC);
         assumeTrue("Test does not apply for 32-bits devices",
                 getDevice().getProperty("ro.product.cpu.abi").contains("64"));
-        assumeTrue("Test does not apply for non-handheld devices", Util.isHandheld(getDevice()));
+        assumeTrue("Test only applies for handheld and PC devices",
+                Util.isHandheld(getDevice()) || Util.isPC(getDevice()));
         assumeFalse("Test does not apply for low ram devices",
                 PropertyUtil.propertyEquals(getDevice(), "ro.config.low_ram", "true"));
         assumeFalse(
