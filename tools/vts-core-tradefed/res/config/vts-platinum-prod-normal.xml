@@ -134,19 +134,28 @@
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#GenerateHwAvSyncId/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#GetAAudioHardwareBurstMinUsec/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#GetAAudioMixerBurstCount/2_android_hardware_audio_core_IModule_r_submix"/>
+    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#GetAudioPortWithExternalDevices/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#GetMicrophones/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#GetMmapPolicyInfos/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#GetVendorParameters/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#MasterMute/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#MasterVolume/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#MicMute/2_android_hardware_audio_core_IModule_r_submix"/>
+    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#OpenStreamInvalidPortConfigId/2_android_hardware_audio_core_IModule_r_submix"/>
+    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#PortConfigIdsAreUnique/2_android_hardware_audio_core_IModule_r_submix"/>
+    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#PortConfigPortIdsAreValid/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#Published/0_android_hardware_audio_core_IModule_bluetooth"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#Published/2_android_hardware_audio_core_IModule_r_submix"/>
+    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#ResetAudioPortConfigInvalidId/2_android_hardware_audio_core_IModule_r_submix"/>
+    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#ResetAudioPortConfigToInitialValue/1_android_hardware_audio_core_IModule_default"/>
+    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#ResetAudioPortConfigToInitialValue/2_android_hardware_audio_core_IModule_r_submix"/>
+    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#SetAllAttachedDevicePortConfigs/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#SetAllExternalDevicePortConfigs/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#SetAllStaticAudioPortConfigs/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#SetAudioPortConfigInvalidPortAudioGain/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#SetAudioPortConfigInvalidPortConfigId/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#SetAudioPortConfigInvalidPortId/2_android_hardware_audio_core_IModule_r_submix"/>
+    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#SetAudioPortConfigSuggestedConfig/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#SetVendorParameters/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#TryChangingConnectionSimulationMidway/2_android_hardware_audio_core_IModule_r_submix"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioCoreModuleTest/AudioCoreModule#TryConnectMissingDevice/2_android_hardware_audio_core_IModule_r_submix"/>
@@ -257,6 +266,7 @@
     <!-- VtsHalBluetoothTargetTest -->
     <option name="compatibility:include-filter" value="VtsHalBluetoothTargetTest PerInstance/BluetoothAidlTest#CallInitializeTwice/0_android_hardware_bluetooth_IBluetoothHci_default"/>
     <option name="compatibility:include-filter" value="VtsHalBluetoothTargetTest PerInstance/BluetoothAidlTest#HciReset/0_android_hardware_bluetooth_IBluetoothHci_default"/>
+    <option name="compatibility:include-filter" value="VtsHalBluetoothTargetTest PerInstance/BluetoothAidlTest#HciUnknownCommand/0_android_hardware_bluetooth_IBluetoothHci_default"/>
     <option name="compatibility:include-filter" value="VtsHalBluetoothTargetTest PerInstance/BluetoothAidlTest#HciVersionTest/0_android_hardware_bluetooth_IBluetoothHci_default"/>
     <option name="compatibility:include-filter" value="VtsHalBluetoothTargetTest PerInstance/BluetoothAidlTest#InitializeAndClose/0_android_hardware_bluetooth_IBluetoothHci_default"/>
     <option name="compatibility:include-filter" value="VtsHalBluetoothTargetTest PerInstance/BluetoothAidlTest#SetEventMask/0_android_hardware_bluetooth_IBluetoothHci_default"/>
@@ -299,9 +309,6 @@
     <option name="compatibility:include-filter" value="VtsHalPowerTargetTest Power/HintSessionAidl#setThreads/0_android_hardware_power_IPower_default"/>
     <option name="compatibility:include-filter" value="VtsHalPowerTargetTest Power/HintSessionAidl#updateAndReportDurations/0_android_hardware_power_IPower_default"/>
     <!-- VtsHalRemotelyProvisionedComponentTargetTest -->
-    <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestTest#EmptyRequest_testMode/0_android_hardware_security_keymint_IRemotelyProvisionedComponent_default"/>
-    <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestTest#NewKeyPerCallInTestMode/0_android_hardware_security_keymint_IRemotelyProvisionedComponent_default"/>
-    <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestTest#NonEmptyRequest_testMode/0_android_hardware_security_keymint_IRemotelyProvisionedComponent_default"/>
     <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestV2Test#DeviceInfo/0_android_hardware_security_keymint_IRemotelyProvisionedComponent_default"/>
     <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestV2Test#DeviceInfo/1_android_hardware_security_keymint_IRemotelyProvisionedComponent_strongbox"/>
     <option name="compatibility:include-filter" value="VtsHalRemotelyProvisionedComponentTargetTest PerInstance/CertificateRequestV2Test#EmptyRequest/1_android_hardware_security_keymint_IRemotelyProvisionedComponent_strongbox"/>
@@ -313,11 +320,12 @@
     <option name="compatibility:include-filter" value="VtsHalWifiApIfaceTargetTest WifiTest/WifiApIfaceAidlTest#GetBridgedInstances/0_android_hardware_wifi_IWifi_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiApIfaceTargetTest WifiTest/WifiApIfaceAidlTest#GetFactoryMacAddress/0_android_hardware_wifi_IWifi_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiApIfaceTargetTest WifiTest/WifiApIfaceAidlTest#ResetToFactoryMacAddress/0_android_hardware_wifi_IWifi_default"/>
+    <option name="compatibility:include-filter" value="VtsHalWifiApIfaceTargetTest WifiTest/WifiApIfaceAidlTest#SetCountryCode/0_android_hardware_wifi_IWifi_default"/>
     <!-- VtsHalWifiNanIfaceTargetTest -->
     <option name="compatibility:include-filter" value="VtsHalWifiNanIfaceTargetTest WifiTest/WifiNanIfaceAidlTest#FailOnIfaceInvalid/0_android_hardware_wifi_IWifi_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiNanIfaceTargetTest WifiTest/WifiNanIfaceAidlTest#StartPublishRequest/0_android_hardware_wifi_IWifi_default"/>
+    <option name="compatibility:include-filter" value="VtsHalWifiNanIfaceTargetTest WifiTest/WifiNanIfaceAidlTest#StartSubscribeRequest/0_android_hardware_wifi_IWifi_default"/>
     <!-- VtsHalWifiRttControllerTargetTest -->
-    <option name="compatibility:include-filter" value="VtsHalWifiRttControllerTargetTest WifiTest/WifiRttControllerAidlTest#GetCapabilities/0_android_hardware_wifi_IWifi_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiRttControllerTargetTest WifiTest/WifiRttControllerAidlTest#RegisterEventCallback/0_android_hardware_wifi_IWifi_default"/>
     <!-- VtsHalWifiStaIfaceTargetTest -->
     <option name="compatibility:include-filter" value="VtsHalWifiStaIfaceTargetTest WifiTest/WifiStaIfaceAidlTest#CheckApfIsSupported/0_android_hardware_wifi_IWifi_default"/>
@@ -328,12 +336,15 @@
     <option name="compatibility:include-filter" value="VtsHalWifiStaIfaceTargetTest WifiTest/WifiStaIfaceAidlTest#TwtSessionSetup/0_android_hardware_wifi_IWifi_default"/>
     <!-- VtsHalWifiSupplicantP2pIfaceTargetTest -->
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantP2pIfaceTargetTest Supplicant/SupplicantP2pIfaceAidlTest#CancelConnect/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
+    <option name="compatibility:include-filter" value="VtsHalWifiSupplicantP2pIfaceTargetTest Supplicant/SupplicantP2pIfaceAidlTest#ManageNetworks/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <!-- VtsHalWifiSupplicantP2pNetworkTargetTest -->
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantP2pNetworkTargetTest Supplicant/SupplicantP2pNetworkAidlTest#GetClientList/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantP2pNetworkTargetTest Supplicant/SupplicantP2pNetworkAidlTest#GetId/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
+    <option name="compatibility:include-filter" value="VtsHalWifiSupplicantP2pNetworkTargetTest Supplicant/SupplicantP2pNetworkAidlTest#GetInterfaceName/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantP2pNetworkTargetTest Supplicant/SupplicantP2pNetworkAidlTest#GetSsid/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantP2pNetworkTargetTest Supplicant/SupplicantP2pNetworkAidlTest#GetType/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantP2pNetworkTargetTest Supplicant/SupplicantP2pNetworkAidlTest#IsCurrent/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
+    <option name="compatibility:include-filter" value="VtsHalWifiSupplicantP2pNetworkTargetTest Supplicant/SupplicantP2pNetworkAidlTest#IsGroupOwner/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantP2pNetworkTargetTest Supplicant/SupplicantP2pNetworkAidlTest#IsPersistent/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <option name="compatibility:include-filter" value="VtsHalWifiSupplicantP2pNetworkTargetTest Supplicant/SupplicantP2pNetworkAidlTest#SetClientList/0_android_hardware_wifi_supplicant_ISupplicant_default"/>
     <!-- connectivity_native_test -->
