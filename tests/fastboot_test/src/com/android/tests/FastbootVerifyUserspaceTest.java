@@ -41,7 +41,6 @@ import java.util.regex.Pattern;
 import org.junit.Assert;
 import org.junit.Assume;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -117,7 +116,6 @@ public class FastbootVerifyUserspaceTest extends BaseHostJUnit4Test {
     }
 
     /* Runs fuzzy_fastboot gtest to verify slot operations in fastbootd implementation. */
-    @Ignore("b/146589281")
     @Test
     public void testFastbootdSlotOperations() throws Exception {
         CommandResult result = mRunUtil.runTimedCmd(MAX_CMD_RUN_TIME, mFuzzyFastbootPath,
