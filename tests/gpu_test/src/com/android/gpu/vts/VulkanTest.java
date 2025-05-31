@@ -300,8 +300,11 @@ public class VulkanTest extends BaseHostJUnit4Test {
     }
 
     private boolean mustChipsetMeetA15Requirement() throws Exception {
+        final long boardFirstApiLevel = getDevice().getIntProperty("ro.board.first_api_level", 0);
         final long boardApiLevel = getDevice().getIntProperty("ro.board.api_level", 0);
-        return boardApiLevel >= Build.VENDOR_24Q2;
+
+        return boardApiLevel >= Build.VENDOR_24Q2 ||
+            boardFirstApiLevel >= Build.VENDOR_24Q2;
     }
 
     private boolean mustChipsetMeetA16Requirement() throws Exception {
@@ -309,8 +312,8 @@ public class VulkanTest extends BaseHostJUnit4Test {
         final long boardFirstApiLevel = getDevice().getIntProperty("ro.board.first_api_level", 0);
         final long boardApiLevel = getDevice().getIntProperty("ro.board.api_level", 0);
 
-        return boardApiLevel >= Build.VENDOR_25Q2 ||            // Chipsets at A16 level
-            (boardFirstApiLevel <= 32 && boardApiLevel < 34);   // Old chipsets that would need to reenter at A16
+        return boardApiLevel >= Build.VENDOR_25Q2 ||
+            boardFirstApiLevel >= Build.VENDOR_25Q2;
     }
 
     /**
