@@ -26,4 +26,5 @@
     <option name="compatibility:include-filter" value="VtsHalSecureElementV1_0TargetTest" />
     <option name="compatibility:include-filter" value="VtsHalSecureElementV1_1TargetTest" />
     <option name="compatibility:include-filter" value="VtsHalSecureElementV1_2TargetTest" />
+    <option name="compatibility:include-filter" value="VtsHalSecureElementTargetTest" />
 </configuration>
