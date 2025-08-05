@@ -47,5 +47,6 @@ compatibility_test_suite_package {
     name: "vts",
     tradefed: "vts-tradefed",
     readme: "README",
+    build_test_list: true,
     build_metadata: true,
 }
