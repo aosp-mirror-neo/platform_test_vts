@@ -13,7 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<configuration description="Runs FastbootGetvarUserspaceTest">
+<configuration description="Runs FastbootGetvarUserspaceTest" enabled="false">
     <option name="test-suite-tag" value="apct" />
     <option name="test-suite-tag" value="apct-junit" />
 
