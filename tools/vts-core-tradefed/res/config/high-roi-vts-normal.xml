@@ -20,27 +20,53 @@
     <option name="compatibility:include-filter" value="VtsGpuTests com.android.gpu.vts.VulkanTest#checkVpAndroid15MinimumsSupport"/>
     <option name="compatibility:include-filter" value="VtsGpuTests com.android.gpu.vts.VulkanTest#checkVpAndroid16MinimumsSupport"/>
     <!-- VtsHalAudioCoreTargetTest -->
-    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioStreamOutTest/AudioStreamOut#AddRemoveEffectInvalidArguments/1_android_hardware_audio_core_IModule_default"/>
-    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioStreamOutTest/AudioStreamOut#AudioDescriptionMixLevel/1_android_hardware_audio_core_IModule_default"/>
+    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioStreamInTest/AudioStreamIn#OpenInputStreamWithInvalidTags/1_android_hardware_audio_core_IModule_default"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioStreamOutTest/AudioStreamOut#CallbackNotRequiredForSynchronousIoPort/1_android_hardware_audio_core_IModule_default"/>
-    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioStreamOutTest/AudioStreamOut#DualMonoMode/1_android_hardware_audio_core_IModule_default"/>
-    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioStreamOutTest/AudioStreamOut#HwGainHwVolume/1_android_hardware_audio_core_IModule_default"/>
-    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioStreamOutTest/AudioStreamOut#LatencyMode/1_android_hardware_audio_core_IModule_default"/>
+    <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioStreamOutTest/AudioStreamOut#OpenOutputStreamWithInvalidTags/1_android_hardware_audio_core_IModule_default"/>
     <option name="compatibility:include-filter" value="VtsHalAudioCoreTargetTest AudioStreamOutTest/AudioStreamOut#OpenOutputStreamWithOptionalParameters/1_android_hardware_audio_core_IModule_default"/>
-    <!-- VtsHalBluetoothAudioTargetTest -->
-    <option name="compatibility:include-filter" value="VtsHalBluetoothAudioTargetTest PerInstance/BluetoothAudioProviderLeAudioOutputHardwareAidl#GetAsymmetricAseConfiguration_Multidirectional/0_android_hardware_bluetooth_audio_IBluetoothAudioProviderFactory_default"/>
-    <!-- VtsHalBluetoothTargetTest -->
-    <option name="compatibility:include-filter" value="VtsHalBluetoothTargetTest PerInstance/BluetoothAidlTest#CallInitializeTwice/0_android_hardware_bluetooth_IBluetoothHci_default"/>
-    <option name="compatibility:include-filter" value="VtsHalBluetoothTargetTest PerInstance/BluetoothAidlTest#HciReset/0_android_hardware_bluetooth_IBluetoothHci_default"/>
-    <option name="compatibility:include-filter" value="VtsHalBluetoothTargetTest PerInstance/BluetoothAidlTest#HciUnknownCommand/0_android_hardware_bluetooth_IBluetoothHci_default"/>
-    <option name="compatibility:include-filter" value="VtsHalBluetoothTargetTest PerInstance/BluetoothAidlTest#HciVersionTest/0_android_hardware_bluetooth_IBluetoothHci_default"/>
-    <option name="compatibility:include-filter" value="VtsHalBluetoothTargetTest PerInstance/BluetoothAidlTest#InitializeAndClose/0_android_hardware_bluetooth_IBluetoothHci_default"/>
-    <!-- VtsHalPowerTargetTest -->
-    <option name="compatibility:include-filter" value="VtsHalPowerTargetTest Power/FMQAidl#writeExcess/0_android_hardware_power_IPower_default"/>
-    <option name="compatibility:include-filter" value="VtsHalPowerTargetTest Power/HintSessionAidl#createAndCloseHintSession/0_android_hardware_power_IPower_default"/>
-    <option name="compatibility:include-filter" value="VtsHalPowerTargetTest Power/HintSessionAidl#createHintSessionFailed/0_android_hardware_power_IPower_default"/>
-    <option name="compatibility:include-filter" value="VtsHalPowerTargetTest Power/HintSessionAidl#getSessionConfig/0_android_hardware_power_IPower_default"/>
-    <option name="compatibility:include-filter" value="VtsHalPowerTargetTest Power/HintSessionAidl#sendSessionHint/0_android_hardware_power_IPower_default"/>
+    <!-- VtsHalEraserTargetTest -->
+    <option name="compatibility:include-filter" value="VtsHalEraserTargetTest EraserDataTest/EraserDataTest#ClassifySounds/Implementor_The_Android_Open_Source_Project_name_AOSP_Audio_Eraser_UUID_fa81ad26_588b_11ed_9b6a_0242ac120002__data_local_tmp_bird_16khz_1ch_f32_wav"/>
+    <option name="compatibility:include-filter" value="VtsHalEraserTargetTest EraserDataTest/EraserDataTest#ClassifySounds/Implementor_The_Android_Open_Source_Project_name_AOSP_Audio_Eraser_UUID_fa81ad26_588b_11ed_9b6a_0242ac120002__data_local_tmp_motorcycle_16khz_1ch_f32_wav"/>
+    <option name="compatibility:include-filter" value="VtsHalEraserTargetTest EraserDataTest/EraserDataTest#ClassifySounds/Implementor_The_Android_Open_Source_Project_name_AOSP_Audio_Eraser_UUID_fa81ad26_588b_11ed_9b6a_0242ac120002__data_local_tmp_music_16khz_1ch_f32_wav"/>
+    <option name="compatibility:include-filter" value="VtsHalEraserTargetTest EraserDataTest/EraserDataTest#ClassifySounds/Implementor_The_Android_Open_Source_Project_name_AOSP_Audio_Eraser_UUID_fa81ad26_588b_11ed_9b6a_0242ac120002__data_local_tmp_pinknoise_16khz_1ch_f32_wav"/>
+    <option name="compatibility:include-filter" value="VtsHalEraserTargetTest EraserDataTest/EraserDataTest#ClassifySounds/Implementor_The_Android_Open_Source_Project_name_AOSP_Audio_Eraser_UUID_fa81ad26_588b_11ed_9b6a_0242ac120002__data_local_tmp_rain_16khz_1ch_f32_wav"/>
+    <option name="compatibility:include-filter" value="VtsHalEraserTargetTest EraserDataTest/EraserDataTest#ClassifySounds/Implementor_The_Android_Open_Source_Project_name_AOSP_Audio_Eraser_UUID_fa81ad26_588b_11ed_9b6a_0242ac120002__data_local_tmp_speech_16khz_1ch_f32_wav"/>
+    <option name="compatibility:include-filter" value="VtsHalEraserTargetTest EraserDataTest/EraserDataTest#ClassifySounds/Implementor_The_Android_Open_Source_Project_name_AOSP_Audio_Eraser_UUID_fa81ad26_588b_11ed_9b6a_0242ac120002__data_local_tmp_wind_16khz_1ch_f32_wav"/>
+    <!-- VtsHalGraphicsComposer3_TargetTest -->
+    <option name="compatibility:include-filter" value="VtsHalGraphicsComposer3_TargetTest PerInstance/GraphicsColorManagementCompositionTest#ColorConversion/0"/>
+    <option name="compatibility:include-filter" value="VtsHalGraphicsComposer3_TargetTest PerInstance/GraphicsColorManagementCompositionTest#ColorConversion/1"/>
+    <option name="compatibility:include-filter" value="VtsHalGraphicsComposer3_TargetTest PerInstance/GraphicsCompositionTest#ClientComposition/0_android_hardware_graphics_composer3_IComposer_default"/>
+    <option name="compatibility:include-filter" value="VtsHalGraphicsComposer3_TargetTest PerInstance/GraphicsCompositionTest#DeviceAndClientComposition/0_android_hardware_graphics_composer3_IComposer_default"/>
+    <option name="compatibility:include-filter" value="VtsHalGraphicsComposer3_TargetTest PerInstance/GraphicsCompositionTest#SetLayerBrightnessDims/0_android_hardware_graphics_composer3_IComposer_default"/>
+    <!-- VtsHalMediaC2V1_0TargetVideoEncTest -->
+    <option name="compatibility:include-filter" value="VtsHalMediaC2V1_0TargetVideoEncTest EncodeTestwithEOS/Codec2VideoEncEncodeTest#EncodeTest/default_c2_exynos_mpeg4_encoder_0_0_1_28"/>
+    <option name="compatibility:include-filter" value="VtsHalMediaC2V1_0TargetVideoEncTest EncodeTestwithEOS/Codec2VideoEncEncodeTest#EncodeTest/software_c2_android_apv_encoder_0_0_0_56"/>
+    <option name="compatibility:include-filter" value="VtsHalMediaC2V1_0TargetVideoEncTest EncodeTestwithEOS/Codec2VideoEncEncodeTest#EncodeTest/software_c2_android_apv_encoder_0_0_1_60"/>
+    <!-- VtsHalVibratorManagerTargetTest -->
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#GetVibratorWithInvalidId/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#PrepareComposeNotSupported/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#PrepareOnNotSupported/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#PreparePerformNotSupported/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#PrepareSyncedEmptySetIsInvalid/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#PrepareSyncedNotSupported/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#TriggerCallbackNotSupported/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#TriggerSyncNotSupported/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#TriggerWithCallback/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#ValidateExistingVibrators/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#ValidatePrepareSyncedExistingVibrators/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#VibrationSessionCleared/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#VibrationSessionDeletedAfterEnded/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#VibrationSessionDuringPrepareSyncedFails/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#VibrationSessionEndMultipleTimes/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#VibrationSessionEndingInterrupted/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#VibrationSessionInterrupted/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#VibrationSessionWithMultipleIndependentVibrations/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#VibrationSessionWrongVibratorIdsFail/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#VibrationSessionsClearedWithoutSession/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#VibrationSessionsIgnoresSecondSessionWhenFirstIsOngoing/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#VibrationSessionsSupported/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#VibrationSessionsUnsupported/0_android_hardware_vibrator_IVibratorManager_default"/>
+    <option name="compatibility:include-filter" value="VtsHalVibratorManagerTargetTest VibratorManager/VibratorManagerAidl#VibrationSessionsWithSyncedVibrations/0_android_hardware_vibrator_IVibratorManager_default"/>
     <!-- VtsHalWifiApIfaceTargetTest -->
     <option name="compatibility:include-filter" value="VtsHalWifiApIfaceTargetTest WifiTest/WifiApIfaceAidlTest#GetFactoryMacAddress/0_android_hardware_wifi_IWifi_default"/>
     <!-- VtsHalWifiNanIfaceTargetTest -->
@@ -119,48 +145,6 @@
     <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#OnewayStressTestWithIncomingThread/unix_domain_socket_tls_clientV4026531840_serverV2_multi_threaded_no_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#OnewayStressTestWithIncomingThread/unix_domain_socket_tls_clientV4026531840_serverV2_multi_threaded_with_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#OnewayStressTestWithIncomingThread/vm_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/inet_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/preconnected_uds_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/raw_uds_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_bootstrap_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV2_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV2_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV2_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV2_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV2_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV2_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV2_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV4026531840_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV4026531840_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV4026531840_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV4026531840_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV4026531840_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV4026531840_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV4026531840_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_raw_clientV4026531840_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_tls_clientV2_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_tls_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_tls_clientV2_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_tls_clientV2_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_tls_clientV2_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_tls_clientV2_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_tls_clientV2_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_tls_clientV2_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_tls_clientV4026531840_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_tls_clientV4026531840_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_tls_clientV4026531840_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/unix_domain_socket_tls_clientV4026531840_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadBinders/vm_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadFds/inet_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadFds/preconnected_uds_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadFds/raw_uds_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadFds/unix_domain_socket_bootstrap_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadFds/unix_domain_socket_raw_clientV0_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadFds/unix_domain_socket_raw_clientV0_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadFds/unix_domain_socket_raw_clientV0_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadFds/unix_domain_socket_raw_clientV0_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#RpcValidateReadFds/unix_domain_socket_raw_clientV0_serverV1_multi_threaded_no_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#WriteReadLocalRpcBinder/inet_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#WriteReadLocalRpcBinder/preconnected_uds_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTest PerSocket/BinderRpc#WriteReadLocalRpcBinder/raw_uds_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
@@ -752,39 +736,6 @@
     <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV1_single_threaded_no_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV2_multi_threaded_no_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV0_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV0_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV1_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV1_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV4026531840_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV4026531840_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoKernelAtAll PerSocket/BinderRpc#WriteReadLocalRpcBinder/vm_socket_raw_clientV2_serverV2_multi_threaded_no_kernel"/>
     <!-- binderRpcTestNoLegacy -->
     <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#OnewayStressTestWithIncomingThread/inet_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#OnewayStressTestWithIncomingThread/preconnected_uds_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
@@ -1097,103 +1048,6 @@
     <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#RpcValidateReadOverFds/unix_domain_socket_tls_clientV4026531840_serverV2_single_threaded_no_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#RpcValidateReadOverFds/unix_domain_socket_tls_clientV4026531840_serverV2_single_threaded_with_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#RpcValidateReadOverFds/vm_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/inet_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/preconnected_uds_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/raw_uds_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_bootstrap_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV1_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV1_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV1_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV1_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV1_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV1_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV1_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV1_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV0_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV0_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV0_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV0_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV1_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV1_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV1_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV1_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV1_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV1_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV4026531840_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV4026531840_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV4026531840_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV4026531840_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestNoLegacy PerSocket/BinderRpc#WriteReadLocalRpcBinder/vm_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
     <!-- binderRpcTestSingleThreaded -->
     <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#RpcValidateReadBinders/inet_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#RpcValidateReadBinders/preconnected_uds_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
@@ -1455,103 +1309,6 @@
     <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#RpcValidateReadOverFds/unix_domain_socket_tls_clientV4026531840_serverV2_single_threaded_no_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#RpcValidateReadOverFds/unix_domain_socket_tls_clientV4026531840_serverV2_single_threaded_with_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#RpcValidateReadOverFds/vm_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/inet_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/preconnected_uds_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/raw_uds_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_bootstrap_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV1_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV1_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV1_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV1_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV1_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV1_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV1_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV1_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV0_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV0_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV0_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV0_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV1_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV1_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV1_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV1_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV1_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV1_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV4026531840_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV4026531840_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV4026531840_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV4026531840_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreaded PerSocket/BinderRpc#WriteReadLocalRpcBinder/vm_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
     <!-- binderRpcTestSingleThreadedNoKernel -->
     <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#RpcValidateReadBinders/inet_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#RpcValidateReadBinders/preconnected_uds_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
@@ -1813,103 +1570,6 @@
     <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#RpcValidateReadOverFds/unix_domain_socket_tls_clientV4026531840_serverV2_single_threaded_no_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#RpcValidateReadOverFds/unix_domain_socket_tls_clientV4026531840_serverV2_single_threaded_with_kernel"/>
     <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#RpcValidateReadOverFds/vm_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/inet_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/preconnected_uds_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/raw_uds_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_bootstrap_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV1_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV1_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV0_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV1_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV1_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV1_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV1_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV1_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV2_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV1_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV1_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_raw_clientV4026531840_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV0_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV0_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV0_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV0_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV1_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV1_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV1_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV1_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV0_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV0_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV0_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV0_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV1_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV1_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV1_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV1_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV4026531840_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV4026531840_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV4026531840_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV2_serverV4026531840_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV4026531840_serverV2_multi_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV4026531840_serverV2_multi_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV4026531840_serverV2_single_threaded_no_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/unix_domain_socket_tls_clientV4026531840_serverV2_single_threaded_with_kernel"/>
-    <option name="compatibility:include-filter" value="binderRpcTestSingleThreadedNoKernel PerSocket/BinderRpc#WriteReadLocalRpcBinder/vm_socket_raw_clientV2_serverV2_multi_threaded_with_kernel"/>
     <!-- connectivity_native_test -->
     <option name="compatibility:include-filter" value="connectivity_native_test ConnectivityNativeBinderTest#GetBlockedPorts"/>
     <option name="compatibility:include-filter" value="connectivity_native_test ConnectivityNativeBinderTest#PortUnblockedV4Udp"/>
@@ -1919,18 +1579,30 @@
     <option name="compatibility:include-filter" value="f2fs_test F2fsTest#test_compressed_lseek"/>
     <!-- hidl_test_java -->
     <option name="compatibility:include-filter" value="hidl_test_java __main__.TestHidlJava#test_java_to_64"/>
-    <!-- netd_integration_test -->
-    <option name="compatibility:include-filter" value="netd_integration_test NetdBinderTest#SocketDestroyLinkLocal"/>
-    <!-- vts_eol_enforcement_test -->
-    <option name="compatibility:include-filter" value="vts_eol_enforcement_test EolEnforcementTest#KernelNotEol"/>
-    <!-- vts_generic_boot_image_test -->
-    <option name="compatibility:include-filter" value="vts_generic_boot_image_test GenericBootImageTest#GenericRamdisk"/>
-    <!-- vts_gki_compliance_test -->
-    <option name="compatibility:include-filter" value="vts_gki_compliance_test KernelVersionTest#AgainstPlatformRelease"/>
     <!-- vts_kernel_fuse_bpf_test -->
     <option name="compatibility:include-filter" value="vts_kernel_fuse_bpf_test __main__.VtsKernelFuseBpfTest#testFuseBpfEnabled"/>
     <!-- vts_libdm_test -->
     <option name="compatibility:include-filter" value="vts_libdm_test DmTest#DmVerityArgsTryVerifyTasklet"/>
+    <!-- vts_ltp_test_arm_64 -->
+    <option name="compatibility:include-filter" value="vts_ltp_test_arm_64 mm.mmap21_01_64bit#mm.mmap21_01_64bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_arm_64 mm.mmap21_02_64bit#mm.mmap21_02_64bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_arm_64 syscalls.fchownat03_64bit#syscalls.fchownat03_64bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_arm_64 syscalls.flock07_64bit#syscalls.flock07_64bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_arm_64 syscalls.ioctl_fiemap01_64bit#syscalls.ioctl_fiemap01_64bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_arm_64 syscalls.mmap21_01_64bit#syscalls.mmap21_01_64bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_arm_64 syscalls.mmap21_02_64bit#syscalls.mmap21_02_64bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_arm_64 syscalls.unshare03_64bit#syscalls.unshare03_64bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_arm_64 syscalls.unshare04_64bit#syscalls.unshare04_64bit"/>
+    <!-- vts_ltp_test_x86 -->
+    <option name="compatibility:include-filter" value="vts_ltp_test_x86 mm.mmap21_01_32bit#mm.mmap21_01_32bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_x86 mm.mmap21_02_32bit#mm.mmap21_02_32bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_x86 syscalls.fchownat03_32bit#syscalls.fchownat03_32bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_x86 syscalls.flock07_32bit#syscalls.flock07_32bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_x86 syscalls.ioctl_fiemap01_32bit#syscalls.ioctl_fiemap01_32bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_x86 syscalls.mmap21_01_32bit#syscalls.mmap21_01_32bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_x86 syscalls.mmap21_02_32bit#syscalls.mmap21_02_32bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_x86 syscalls.unshare03_32bit#syscalls.unshare03_32bit"/>
+    <option name="compatibility:include-filter" value="vts_ltp_test_x86 syscalls.unshare04_32bit#syscalls.unshare04_32bit"/>
     <!-- vts_treble_no_hidl -->
     <option name="compatibility:include-filter" value="vts_treble_no_hidl VintfNoHidlTest#NoHidl"/>
     <!-- vts_treble_vintf_framework_test -->
@@ -1941,6 +1613,7 @@
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_frameworks_stats_IStats_default__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_frameworks_vibrator_IVibratorControlService_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_media_c2_IComponentStore_software__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_security_keymint_IRemotelyProvisionedComponent_avf__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_system_keystore2_IKeystoreService_default__V5"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_system_net_netd_INetd_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_system_suspend_ISystemSuspend_default__V1"/>
@@ -1952,6 +1625,7 @@
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#HalIsServed/android_frameworks_stats_IStats_default__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#HalIsServed/android_frameworks_vibrator_IVibratorControlService_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#HalIsServed/android_hardware_media_c2_IComponentStore_software__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#HalIsServed/android_hardware_security_keymint_IRemotelyProvisionedComponent_avf__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#HalIsServed/android_system_keystore2_IKeystoreService_default__V5"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#HalIsServed/android_system_net_netd_INetd_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#HalIsServed/android_system_suspend_ISystemSuspend_default__V1"/>
@@ -1963,132 +1637,445 @@
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_frameworks_stats_IStats_default__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_frameworks_vibrator_IVibratorControlService_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_media_c2_IComponentStore_software__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_security_keymint_IRemotelyProvisionedComponent_avf__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_system_keystore2_IKeystoreService_default__V5"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_system_net_netd_INetd_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_system_suspend_ISystemSuspend_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_framework_test FrameworkManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_system_vold_IVold_default__V1"/>
     <!-- vts_treble_vintf_vendor_test -->
-    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_audio_core_IConfig_default__V3"/>
-    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_audio_core_IModule_bluetooth__V3"/>
-    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_audio_core_IModule_default__V3"/>
-    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_audio_core_IModule_r__submix__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_audio_core_IConfig_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_audio_core_IModule_bluetooth__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_audio_core_IModule_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_audio_core_IModule_r__submix__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_audio_effect_IFactory_default__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_authsecret_IAuthSecret_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_biometrics_face_IFace_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_biometrics_fingerprint_IFingerprint_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_biometrics_fingerprint_IFingerprint_default__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_bluetooth_IBluetoothHci_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_bluetooth_audio_IBluetoothAudioProviderFactory_default__V5"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_bluetooth_finder_IBluetoothFinder_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_bluetooth_lmp__event_IBluetoothLmpEvent_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_bluetooth_ranging_IBluetoothChannelSounding_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_bluetooth_ranging_IBluetoothChannelSounding_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_bluetooth_socket_IBluetoothSocket_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_boot_IBootControl_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_camera_provider_ICameraProvider_internal_0__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_cas_IMediaCasService_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_confirmationui_IConfirmationUI_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_contexthub_IContextHub_default__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_drm_IDrmFactory_clearkey__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_drm_IDrmFactory_widevine__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_dumpstate_IDumpstateDevice_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_gatekeeper_IGatekeeper_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_gnss_IGnss_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_gnss_IGnss_default__V7"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_gnss_IGnss_vendor__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_graphics_allocator_IAllocator_default__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_graphics_composer3_IComposer_default__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_health_IHealth_default__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_health_storage_IStorage_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_identity_IIdentityCredentialStore_default__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_input_processor_IInputProcessor_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_ir_IConsumerIr_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_light_ILights_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_media_c2_IComponentStore_default1__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_media_c2_IComponentStore_default2__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_media_c2_IComponentStore_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_memtrack_IMemtrack_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_net_nlinterceptor_IInterceptor_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_neuralnetworks_IDevice_google_edgetpu__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_neuralnetworks_IDevice_nnapi_sample__all__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_neuralnetworks_IDevice_nnapi_sample__quant__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_neuralnetworks_IDevice_nnapi_sample__sl__shim__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_nfc_INfc_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_nfc_INfc_default__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_oemlock_IOemLock_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_power_IPower_default__V6"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_power_stats_IPowerStats_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_config_IRadioConfig_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_config_IRadioConfig_default__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_data_IRadioData_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_data_IRadioData_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_data_IRadioData_slot2__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_ims_IRadioIms_slot1__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_ims_media_IImsMedia_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_messaging_IRadioMessaging_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_messaging_IRadioMessaging_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_messaging_IRadioMessaging_slot2__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_modem_IRadioModem_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_modem_IRadioModem_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_modem_IRadioModem_slot2__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_network_IRadioNetwork_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_network_IRadioNetwork_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_network_IRadioNetwork_slot2__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_sap_ISap_slot1__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_sap_ISap_slot2__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_sim_IRadioSim_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_sim_IRadioSim_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_sim_IRadioSim_slot2__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_voice_IRadioVoice_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_voice_IRadioVoice_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_radio_voice_IRadioVoice_slot2__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_rebootescrow_IRebootEscrow_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_secure__element_ISecureElement_SIM1__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_secure__element_ISecureElement_SIM2__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_secure__element_ISecureElement_eSE1__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_security_authgraph_IAuthGraphKeyExchange_nonsecure__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_security_keymint_IKeyMintDevice_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_security_keymint_IKeyMintDevice_strongbox__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_security_keymint_IRemotelyProvisionedComponent_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_security_keymint_IRemotelyProvisionedComponent_strongbox__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_security_secretkeeper_ISecretkeeper_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_security_secretkeeper_ISecretkeeper_nonsecure__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_security_secureclock_ISecureClock_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_security_sharedsecret_ISharedSecret_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_security_sharedsecret_ISharedSecret_gatekeeper__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_security_sharedsecret_ISharedSecret_strongbox__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_sensors_ISensors_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_soundtrigger3_ISoundTriggerHw_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_tetheroffload_IOffload_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_thermal_IThermal_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_threadnetwork_IThreadChip_chip0__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_usb_IUsb_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_usb_gadget_IUsbGadget_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_uwb_IUwb_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_vibrator_IVibratorManager_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_vibrator_IVibrator_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_vibrator_IVibrator_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_weaver_IWeaver_default__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_wifi_IWifi_default__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_wifi_hostapd_IHostapd_default__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/android_hardware_wifi_supplicant_ISupplicant_default__V5"/>
-    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_audio_core_IConfig_default__V3"/>
-    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_audio_core_IModule_bluetooth__V3"/>
-    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_audio_core_IModule_default__V3"/>
-    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_audio_core_IModule_r__submix__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/aocx_IAocx_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_edgetpu_IEdgeTpuVendorService_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_face_debug_IDebugHost_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_face_debug_IDebugManager_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_flood_IFloodService_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_hardware_biometrics_fingerprint_debug_IFingerprintDebug_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_hardware_pixel_display_IDisplay_default__V17"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_input_ITouchContextService_default__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_input_ITwoshayFileDumpService_touchflow__default__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_input_ITwoshayFileDumpService_twoshay__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_input_ITwoshayNotificationService_default__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_input_algos_gril_IGrilAntennaTuningService_default__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_input_algos_spd_IScreenProtectorDetectorService_default__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_input_gia_core_IGiaService_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_input_gia_diagnose_IGiaDiagnoseService_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_pixel_modem_logmasklibrary_ILiboemserviceProxy_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/com_google_pixel_shared__modem__platform_ISharedModemPlatform_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/hardware_google_ril__ext_IRilExt_slot1__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/hardware_google_ril__ext_IRilExt_slot2__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_google_aam_IAam_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_google_battery__mitigation_IBatteryMitigation_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_google_bluetooth__ext_IBTChannelAvoidance_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_google_bluetooth__ext_IBluetoothCcc_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_google_bluetooth__ext_IBluetoothCco_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_google_bluetooth__ext_IBluetoothEwp_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_google_bluetooth__ext_IBluetoothExt_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_google_bluetooth__ext_IBluetoothFinder_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_google_bluetooth__ext_IBluetoothSar_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_google_google__battery_IGoogleBattery_default__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_google_radio__ext_IRadioExt_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_google_whitechapel_audio_extension_IAudioExtension_default__V7"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_google_wifi__ext_IWifiExt_default__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_google_wireless__charger_IWirelessCharger_default__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_google_wireless__charger_service_IWlcService_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#ExpectedUpdatableViaSystemHals/vendor_qti_hardware_fingerprint_IQfpExtendedFingerprint_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_audio_core_IConfig_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_audio_core_IModule_bluetooth__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_audio_core_IModule_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_audio_core_IModule_r__submix__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_audio_effect_IFactory_default__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_authsecret_IAuthSecret_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_biometrics_face_IFace_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_biometrics_fingerprint_IFingerprint_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_biometrics_fingerprint_IFingerprint_default__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_bluetooth_IBluetoothHci_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_bluetooth_audio_IBluetoothAudioProviderFactory_default__V5"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_bluetooth_finder_IBluetoothFinder_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_bluetooth_lmp__event_IBluetoothLmpEvent_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_bluetooth_ranging_IBluetoothChannelSounding_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_bluetooth_ranging_IBluetoothChannelSounding_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_bluetooth_socket_IBluetoothSocket_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_boot_IBootControl_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_camera_provider_ICameraProvider_internal_0__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_cas_IMediaCasService_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_confirmationui_IConfirmationUI_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_contexthub_IContextHub_default__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_drm_IDrmFactory_clearkey__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_drm_IDrmFactory_widevine__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_dumpstate_IDumpstateDevice_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_gatekeeper_IGatekeeper_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_gnss_IGnss_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_gnss_IGnss_default__V7"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_gnss_IGnss_vendor__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_graphics_allocator_IAllocator_default__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_graphics_composer3_IComposer_default__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_health_IHealth_default__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_health_storage_IStorage_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_identity_IIdentityCredentialStore_default__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_input_processor_IInputProcessor_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_ir_IConsumerIr_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_light_ILights_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_media_c2_IComponentStore_default1__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_media_c2_IComponentStore_default2__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_media_c2_IComponentStore_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_memtrack_IMemtrack_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_net_nlinterceptor_IInterceptor_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_neuralnetworks_IDevice_google_edgetpu__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_neuralnetworks_IDevice_nnapi_sample__all__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_neuralnetworks_IDevice_nnapi_sample__quant__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_neuralnetworks_IDevice_nnapi_sample__sl__shim__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_nfc_INfc_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_nfc_INfc_default__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_oemlock_IOemLock_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_power_IPower_default__V6"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_power_stats_IPowerStats_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_config_IRadioConfig_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_config_IRadioConfig_default__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_data_IRadioData_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_data_IRadioData_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_data_IRadioData_slot2__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_ims_IRadioIms_slot1__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_ims_media_IImsMedia_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_messaging_IRadioMessaging_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_messaging_IRadioMessaging_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_messaging_IRadioMessaging_slot2__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_modem_IRadioModem_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_modem_IRadioModem_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_modem_IRadioModem_slot2__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_network_IRadioNetwork_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_network_IRadioNetwork_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_network_IRadioNetwork_slot2__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_sap_ISap_slot1__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_sap_ISap_slot2__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_sim_IRadioSim_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_sim_IRadioSim_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_sim_IRadioSim_slot2__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_voice_IRadioVoice_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_voice_IRadioVoice_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_radio_voice_IRadioVoice_slot2__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_rebootescrow_IRebootEscrow_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_secure__element_ISecureElement_SIM1__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_secure__element_ISecureElement_SIM2__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_secure__element_ISecureElement_eSE1__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_security_authgraph_IAuthGraphKeyExchange_nonsecure__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_security_keymint_IKeyMintDevice_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_security_keymint_IKeyMintDevice_strongbox__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_security_keymint_IRemotelyProvisionedComponent_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_security_keymint_IRemotelyProvisionedComponent_strongbox__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_security_secretkeeper_ISecretkeeper_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_security_secretkeeper_ISecretkeeper_nonsecure__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_security_secureclock_ISecureClock_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_security_sharedsecret_ISharedSecret_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_security_sharedsecret_ISharedSecret_gatekeeper__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_security_sharedsecret_ISharedSecret_strongbox__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_sensors_ISensors_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_soundtrigger3_ISoundTriggerHw_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_tetheroffload_IOffload_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_thermal_IThermal_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_threadnetwork_IThreadChip_chip0__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_usb_IUsb_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_usb_gadget_IUsbGadget_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_uwb_IUwb_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_vibrator_IVibratorManager_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_vibrator_IVibrator_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_vibrator_IVibrator_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_weaver_IWeaver_default__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_wifi_IWifi_default__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_wifi_hostapd_IHostapd_default__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/android_hardware_wifi_supplicant_ISupplicant_default__V5"/>
-    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_audio_core_IConfig_default__V3"/>
-    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_audio_core_IModule_bluetooth__V3"/>
-    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_audio_core_IModule_default__V3"/>
-    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_audio_core_IModule_r__submix__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/aocx_IAocx_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_edgetpu_IEdgeTpuVendorService_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_face_debug_IDebugHost_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_face_debug_IDebugManager_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_flood_IFloodService_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_hardware_biometrics_fingerprint_debug_IFingerprintDebug_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_hardware_pixel_display_IDisplay_default__V17"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_input_ITouchContextService_default__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_input_ITwoshayFileDumpService_touchflow__default__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_input_ITwoshayFileDumpService_twoshay__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_input_ITwoshayNotificationService_default__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_input_algos_gril_IGrilAntennaTuningService_default__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_input_algos_spd_IScreenProtectorDetectorService_default__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_input_gia_core_IGiaService_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_input_gia_diagnose_IGiaDiagnoseService_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_pixel_modem_logmasklibrary_ILiboemserviceProxy_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/com_google_pixel_shared__modem__platform_ISharedModemPlatform_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/hardware_google_ril__ext_IRilExt_slot1__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/hardware_google_ril__ext_IRilExt_slot2__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_google_aam_IAam_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_google_battery__mitigation_IBatteryMitigation_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_google_bluetooth__ext_IBTChannelAvoidance_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_google_bluetooth__ext_IBluetoothCcc_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_google_bluetooth__ext_IBluetoothCco_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_google_bluetooth__ext_IBluetoothEwp_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_google_bluetooth__ext_IBluetoothExt_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_google_bluetooth__ext_IBluetoothFinder_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_google_bluetooth__ext_IBluetoothSar_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_google_google__battery_IGoogleBattery_default__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_google_radio__ext_IRadioExt_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_google_whitechapel_audio_extension_IAudioExtension_default__V7"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_google_wifi__ext_IWifiExt_default__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_google_wireless__charger_IWirelessCharger_default__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_google_wireless__charger_service_IWlcService_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#HalIsServed/vendor_qti_hardware_fingerprint_IQfpExtendedFingerprint_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_audio_core_IConfig_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_audio_core_IModule_bluetooth__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_audio_core_IModule_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_audio_core_IModule_r__submix__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_audio_effect_IFactory_default__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_authsecret_IAuthSecret_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_biometrics_face_IFace_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_biometrics_fingerprint_IFingerprint_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_biometrics_fingerprint_IFingerprint_default__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_bluetooth_IBluetoothHci_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_bluetooth_audio_IBluetoothAudioProviderFactory_default__V5"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_bluetooth_finder_IBluetoothFinder_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_bluetooth_lmp__event_IBluetoothLmpEvent_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_bluetooth_ranging_IBluetoothChannelSounding_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_bluetooth_ranging_IBluetoothChannelSounding_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_bluetooth_socket_IBluetoothSocket_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_boot_IBootControl_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_camera_provider_ICameraProvider_internal_0__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_cas_IMediaCasService_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_confirmationui_IConfirmationUI_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_contexthub_IContextHub_default__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_drm_IDrmFactory_clearkey__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_drm_IDrmFactory_widevine__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_dumpstate_IDumpstateDevice_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_gatekeeper_IGatekeeper_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_gnss_IGnss_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_gnss_IGnss_default__V7"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_gnss_IGnss_vendor__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_graphics_allocator_IAllocator_default__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_graphics_composer3_IComposer_default__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_health_IHealth_default__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_health_storage_IStorage_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_identity_IIdentityCredentialStore_default__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_input_processor_IInputProcessor_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_ir_IConsumerIr_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_light_ILights_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_media_c2_IComponentStore_default1__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_media_c2_IComponentStore_default2__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_media_c2_IComponentStore_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_memtrack_IMemtrack_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_net_nlinterceptor_IInterceptor_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_neuralnetworks_IDevice_google_edgetpu__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_neuralnetworks_IDevice_nnapi_sample__all__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_neuralnetworks_IDevice_nnapi_sample__quant__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_neuralnetworks_IDevice_nnapi_sample__sl__shim__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_nfc_INfc_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_nfc_INfc_default__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_oemlock_IOemLock_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_power_IPower_default__V6"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_power_stats_IPowerStats_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_config_IRadioConfig_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_config_IRadioConfig_default__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_data_IRadioData_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_data_IRadioData_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_data_IRadioData_slot2__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_ims_IRadioIms_slot1__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_ims_media_IImsMedia_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_messaging_IRadioMessaging_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_messaging_IRadioMessaging_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_messaging_IRadioMessaging_slot2__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_modem_IRadioModem_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_modem_IRadioModem_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_modem_IRadioModem_slot2__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_network_IRadioNetwork_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_network_IRadioNetwork_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_network_IRadioNetwork_slot2__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_sap_ISap_slot1__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_sap_ISap_slot2__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_sim_IRadioSim_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_sim_IRadioSim_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_sim_IRadioSim_slot2__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_voice_IRadioVoice_slot1__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_voice_IRadioVoice_slot1__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_radio_voice_IRadioVoice_slot2__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_rebootescrow_IRebootEscrow_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_secure__element_ISecureElement_SIM1__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_secure__element_ISecureElement_SIM2__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_secure__element_ISecureElement_eSE1__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_security_authgraph_IAuthGraphKeyExchange_nonsecure__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_security_keymint_IKeyMintDevice_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_security_keymint_IKeyMintDevice_strongbox__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_security_keymint_IRemotelyProvisionedComponent_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_security_keymint_IRemotelyProvisionedComponent_strongbox__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_security_secretkeeper_ISecretkeeper_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_security_secretkeeper_ISecretkeeper_nonsecure__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_security_secureclock_ISecureClock_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_security_sharedsecret_ISharedSecret_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_security_sharedsecret_ISharedSecret_gatekeeper__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_security_sharedsecret_ISharedSecret_strongbox__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_sensors_ISensors_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_soundtrigger3_ISoundTriggerHw_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_tetheroffload_IOffload_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_thermal_IThermal_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_threadnetwork_IThreadChip_chip0__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_usb_IUsb_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_usb_gadget_IUsbGadget_default__V1"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_uwb_IUwb_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_vibrator_IVibratorManager_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_vibrator_IVibrator_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_vibrator_IVibrator_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_weaver_IWeaver_default__V2"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_wifi_IWifi_default__V4"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_wifi_hostapd_IHostapd_default__V3"/>
     <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/android_hardware_wifi_supplicant_ISupplicant_default__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/aocx_IAocx_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_edgetpu_IEdgeTpuVendorService_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_face_debug_IDebugHost_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_face_debug_IDebugManager_default__V4"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_flood_IFloodService_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_hardware_biometrics_fingerprint_debug_IFingerprintDebug_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_hardware_pixel_display_IDisplay_default__V17"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_input_ITouchContextService_default__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_input_ITwoshayFileDumpService_touchflow__default__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_input_ITwoshayFileDumpService_twoshay__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_input_ITwoshayNotificationService_default__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_input_algos_gril_IGrilAntennaTuningService_default__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_input_algos_spd_IScreenProtectorDetectorService_default__V6"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_input_gia_core_IGiaService_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_input_gia_diagnose_IGiaDiagnoseService_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_pixel_modem_logmasklibrary_ILiboemserviceProxy_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/com_google_pixel_shared__modem__platform_ISharedModemPlatform_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/hardware_google_ril__ext_IRilExt_slot1__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/hardware_google_ril__ext_IRilExt_slot2__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_google_aam_IAam_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_google_battery__mitigation_IBatteryMitigation_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_google_bluetooth__ext_IBTChannelAvoidance_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_google_bluetooth__ext_IBluetoothCcc_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_google_bluetooth__ext_IBluetoothCco_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_google_bluetooth__ext_IBluetoothEwp_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_google_bluetooth__ext_IBluetoothExt_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_google_bluetooth__ext_IBluetoothFinder_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_google_bluetooth__ext_IBluetoothSar_default__V3"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_google_google__battery_IGoogleBattery_default__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_google_radio__ext_IRadioExt_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_google_whitechapel_audio_extension_IAudioExtension_default__V7"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_google_wifi__ext_IWifiExt_default__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_google_wireless__charger_IWirelessCharger_default__V5"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_google_wireless__charger_service_IWlcService_default__V2"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleAidlTest#NoExclusiveToVmHalExistIfTrustedVmDisabled/vendor_qti_hardware_fingerprint_IQfpExtendedFingerprint_default__V1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHidlTest#HalIsBinderized/vendor_google_radioext_1_7__IRadioExt_default"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHidlTest#HalIsBinderized/vendor_samsung__slsi_telephony_hardware_oemservice_1_0__IOemService_dm0"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHidlTest#HalIsBinderized/vendor_samsung__slsi_telephony_hardware_oemservice_1_0__IOemService_dm1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHidlTest#HalIsBinderized/vendor_samsung__slsi_telephony_hardware_radioExternal_1_1__IOemSlsiRadioExternal_rilExternal"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHidlTest#HalIsServed/vendor_google_radioext_1_7__IRadioExt_default"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHidlTest#HalIsServed/vendor_samsung__slsi_telephony_hardware_oemservice_1_0__IOemService_dm0"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHidlTest#HalIsServed/vendor_samsung__slsi_telephony_hardware_oemservice_1_0__IOemService_dm1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHidlTest#HalIsServed/vendor_samsung__slsi_telephony_hardware_radioExternal_1_1__IOemSlsiRadioExternal_rilExternal"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHidlTest#InterfaceIsReleased/vendor_google_radioext_1_7__IRadioExt_default"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHidlTest#InterfaceIsReleased/vendor_samsung__slsi_telephony_hardware_oemservice_1_0__IOemService_dm0"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHidlTest#InterfaceIsReleased/vendor_samsung__slsi_telephony_hardware_oemservice_1_0__IOemService_dm1"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHidlTest#InterfaceIsReleased/vendor_samsung__slsi_telephony_hardware_radioExternal_1_1__IOemSlsiRadioExternal_rilExternal"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHwbinderHalTest#ServedHwbinderHalIsInManifest/vendor_samsung__slsi_telephony_hardware_oemservice_1_0__IOemService_dm0_23"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHwbinderHalTest#ServedHwbinderHalIsInManifest/vendor_samsung__slsi_telephony_hardware_oemservice_1_0__IOemService_dm1_24"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHwbinderHalTest#ServedHwbinderHalIsInManifest/vendor_samsung__slsi_telephony_hardware_radioExternal_1_0__IOemSlsiRadioExternal_rilExternal_25"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleHwbinderHalTest#ServedHwbinderHalIsInManifest/vendor_samsung__slsi_telephony_hardware_radioExternal_1_1__IOemSlsiRadioExternal_rilExternal_26"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleNativeTest#ExistsIfDeclared/mapper__minigbm__V5_0"/>
+    <option name="compatibility:include-filter" value="vts_treble_vintf_vendor_test DeviceManifest/SingleNativeTest#ExistsIfDeclared/mapper__pixel__V5_0"/>
 </configuration>
