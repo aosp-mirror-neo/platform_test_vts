@@ -122,6 +122,10 @@ public class FastbootVerifyUserspaceTest extends BaseHostJUnit4Test {
                 String.format(
                         "--serial=%s", getTestInformation().getDevice().getFastbootSerialNumber()),
                 "--gtest_filter=Conformance.Slots:Conformance.SetActive");
+        if (!CommandStatus.SUCCESS.equals(result.getStatus())) {
+            CLog.w("Slot operations failed. Stdout: %s\n, stderr: %s",
+                    result.getStdout(), result.getStderr());
+        }
         Assert.assertEquals(CommandStatus.SUCCESS, result.getStatus());
     }
 
@@ -150,6 +154,10 @@ public class FastbootVerifyUserspaceTest extends BaseHostJUnit4Test {
                 String.format(
                         "--serial=%s", getTestInformation().getDevice().getFastbootSerialNumber()),
                 "--gtest_filter=LogicalPartitionCompliance.FastbootRebootTest");
+        if (!CommandStatus.SUCCESS.equals(result.getStatus())) {
+            CLog.w("testFastbootReboot failed. Stdout: %s\n, stderr: %s",
+            result.getStdout(), result.getStderr());
+        }
         Assert.assertEquals(CommandStatus.SUCCESS, result.getStatus());
     }
 
