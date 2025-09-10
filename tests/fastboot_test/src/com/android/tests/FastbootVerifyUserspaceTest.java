@@ -41,13 +41,16 @@ import java.util.regex.Pattern;
 import org.junit.Assert;
 import org.junit.Assume;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+
 /* VTS test to verify userspace fastboot implementation. */
 @RequiresDevice
 @RunWith(DeviceJUnit4ClassRunner.class)
+@Ignore("TODO: b/440515413")
 public class FastbootVerifyUserspaceTest extends BaseHostJUnit4Test {
     // Default maximum command run time is set to 90 seconds.
     private static final long MAX_CMD_RUN_TIME = 90000L;

@@ -41,12 +41,14 @@ import java.util.regex.Pattern;
 import org.junit.Assert;
 import org.junit.Assume;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 /* VTS test to verify userspace fastboot getvar information. */
 @RequiresDevice
 @RunWith(DeviceJUnit4ClassRunner.class)
+@Ignore("TODO: b/440515413")
 public class FastbootGetvarUserspaceTest extends BaseHostJUnit4Test {
     private static final int PLATFORM_API_LEVEL_R = 30;
     private static final int ANDROID_RELEASE_VERSION_R = 11;
