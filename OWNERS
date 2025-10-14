@@ -1,6 +1,13 @@
-dshi@google.com
-guangzhu@google.com
-jdesprez@google.com
+# This is a list of backup approvers.
+# Each test should have their own OWNERS file specified
+# in sub-directory. And changes to specific test code
+# should be approved by test owners.
+
+# Ordered by escalation priority
+# Android Partner Eng Approvers for Dr. No
+samgarg@google.com
+rossyeh@google.com #{LAST_RESORT_SUGGESTION}
+robinjacob@google.com #{LAST_RESORT_SUGGESTION}
 
 # Android xTS Infra Approvers
 wenshan@google.com
