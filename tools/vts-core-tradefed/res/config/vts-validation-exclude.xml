@@ -55,4 +55,10 @@
     <option name="compatibility:exclude-filter" value="vts_vndk_dependency_test" />
     <option name="compatibility:exclude-filter" value="vts_vndk_files_test" />
 
+    <!-- b/438736699 -->
+    <option name="compatibility:exclude-filter" value="f2fs_test" />
+
+    <!-- b/438588704 -->
+    <option name="compatibility:exclude-filter" value="CtsAdServicesDebuggableDeviceTestCases" />
+
 </configuration>
