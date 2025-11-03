@@ -384,6 +384,8 @@ public class VulkanTest extends BaseHostJUnit4Test {
     public void checkVpAndroid15MinimumsSupport() throws Exception {
         assumeTrue(mustChipsetMeetA15Requirement());
         assumeFalse("Exclude new graphics requirements for TV", FeatureUtil.isTV(getDevice()));
+        assumeFalse(
+                "Exclude new graphics requirements for Watch", FeatureUtil.isWatch(getDevice()));
 
         boolean hasOnlyCpuDevice = true;
         for (JSONObject device : mVulkanDevices) {
@@ -409,6 +411,8 @@ public class VulkanTest extends BaseHostJUnit4Test {
     public void checkVpAndroid16MinimumsSupport() throws Exception {
         assumeTrue(mustChipsetMeetA16Requirement());
         assumeFalse("Exclude new graphics requirements for TV", FeatureUtil.isTV(getDevice()));
+        assumeFalse(
+                "Exclude new graphics requirements for Watch", FeatureUtil.isWatch(getDevice()));
 
         boolean hasOnlyCpuDevice = true;
         for (JSONObject device : mVulkanDevices) {
