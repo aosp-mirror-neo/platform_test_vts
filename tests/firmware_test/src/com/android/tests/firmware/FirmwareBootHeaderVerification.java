@@ -46,7 +46,7 @@ import org.junit.runner.RunWith;
 public class FirmwareBootHeaderVerification extends BaseHostJUnit4Test {
     private static final int PLATFORM_API_LEVEL_P = 28;
     // Path to platform block devices.
-    private static final String BLOCK_DEV_PATH = "/dev/block/platform";
+    private static final String BLOCK_DEV_PATH = "/dev/block/by-name";
     // Indicates current slot suffix for A/B devices.
     private static final String PROPERTY_SLOT_SUFFIX = "ro.boot.slot_suffix";
     // Indicates the ACPIO index.

@@ -50,7 +50,7 @@ import org.junit.runner.RunWith;
 @RunWith(DeviceJUnit4ClassRunner.class)
 public class FirmwareDtboVerification extends BaseHostJUnit4Test {
     // Path to platform block devices
-    private static final String BLOCK_DEV_PATH = "/dev/block/platform";
+    private static final String BLOCK_DEV_PATH = "/dev/block/by-name";
     // Temporary dir in device.
     private static final String DEVICE_TEMP_DIR = "/data/local/tmp/";
     // Path to device tree.
