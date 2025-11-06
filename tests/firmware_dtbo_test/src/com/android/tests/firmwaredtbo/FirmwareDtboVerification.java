@@ -26,18 +26,24 @@ import com.android.tradefed.util.FileUtil;
 import com.android.tradefed.util.RunUtil;
 import com.android.tradefed.util.TargetFileUtils;
 import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.zip.DataFormatException;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.Inflater;
+import org.apache.commons.compress.compressors.lz4.FramedLZ4CompressorInputStream;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Assume;
@@ -70,9 +76,22 @@ public class FirmwareDtboVerification extends BaseHostJUnit4Test {
     private ITestDevice mDevice;
     private String mDeviceTestRoot = null;
 
-    private int NO_COMPRESSION = 0x00;
-    private int ZLIB_COMPRESSION = 0x01;
-    private int GZIP_COMPRESSION = 0x02;
+    private enum CompressionType {
+        NO_COMPRESSION(0),
+        ZLIB_COMPRESSION(1),
+        GZIP_COMPRESSION(2),
+        LZ4_COMPRESSION(3);
+
+        private final int val;
+
+        CompressionType(int val) {
+            this.val = val;
+        }
+
+        int getVal() {
+            return val;
+        }
+    }
 
     @BeforeClass
     public static void oneTimeSetup() throws Exception {
@@ -124,6 +143,28 @@ public class FirmwareDtboVerification extends BaseHostJUnit4Test {
         decompressDTEntries(hostDtboImage, unpackedDtbo);
     }
 
+    private static void lz4DecompressAndOverwrite(File originalFile) throws IOException {
+        // Create a temporary file to store decompressed data
+        File tempFile = new File(String.format("%s.decompressed", originalFile.getAbsolutePath()));
+
+        // Open the LZ4 file for reading
+        try (InputStream fileIn = new BufferedInputStream(new FileInputStream(originalFile));
+                FramedLZ4CompressorInputStream lz4In = new FramedLZ4CompressorInputStream(fileIn);
+                OutputStream out = new BufferedOutputStream(new FileOutputStream(tempFile))) {
+            final byte[] buffer = new byte[4096];
+            int n = 0;
+            while (-1 != (n = lz4In.read(buffer))) {
+                out.write(buffer, 0, n);
+            }
+        }
+
+        // Replace the original file with the decompressed temp file
+        // Atomic move ensures the file is not corrupted if the process fails midway
+        Files.move(tempFile.toPath(), originalFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+        System.out.println("Successfully decompressed and overwrote: " + originalFile.getName());
+    }
+
     /**
      * Decompresses DT entries based on the flag field in the DT Entry header.
      *
@@ -160,15 +201,20 @@ public class FirmwareDtboVerification extends BaseHostJUnit4Test {
                     int flags = ByteBuffer.wrap(bytes).order(ByteOrder.BIG_ENDIAN).getInt();
                     int compression_format = flags & COMPRESSION_FLAGS_BIT_MASK;
                     CLog.d("compression_format= %s", compression_format);
-                    if ((compression_format != ZLIB_COMPRESSION)
-                            && (compression_format != GZIP_COMPRESSION)) {
+                    if ((compression_format < CompressionType.ZLIB_COMPRESSION.getVal())
+                            || (compression_format > CompressionType.LZ4_COMPRESSION.getVal())) {
                         Assert.assertEquals(
                                 String.format("Unknown compression format %d", compression_format),
-                                compression_format, NO_COMPRESSION);
+                                compression_format, CompressionType.valueOf("NO_COMPRESSION"));
                     }
+
+                    if (compression_format == CompressionType.LZ4_COMPRESSION.getVal()) {
+                        lz4DecompressAndOverwrite(dt_entry_file);
+                    }
+
                     try (InputStream fileInputStream = new FileInputStream(dt_entry_file)) {
                         byte[] cpio_header = new byte[6];
-                        if (compression_format == ZLIB_COMPRESSION) {
+                        if (compression_format == CompressionType.ZLIB_COMPRESSION.getVal()) {
                             CLog.d("Decompressing %s with ZLIB_COMPRESSION",
                                     dt_entry_file.getAbsolutePath());
                             byte[] compressedData = new byte[(int) dt_entry_file.length()];
@@ -176,7 +222,8 @@ public class FirmwareDtboVerification extends BaseHostJUnit4Test {
                             Inflater inflater = new Inflater();
                             inflater.setInput(compressedData);
                             inflater.inflate(cpio_header);
-                        } else if (compression_format == GZIP_COMPRESSION) {
+                        } else if (compression_format
+                                == CompressionType.GZIP_COMPRESSION.getVal()) {
                             CLog.d("Decompressing %s with GZIP_COMPRESSION",
                                     dt_entry_file.getAbsolutePath());
                             try (GZIPInputStream gzipStream = new GZIPInputStream(
