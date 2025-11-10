@@ -49,7 +49,9 @@ import org.junit.runner.RunWith;
 @RunWith(DeviceJUnit4ClassRunner.class)
 public class FirmwareDtboVerification extends BaseHostJUnit4Test {
     // Path to platform block devices
-    private static final String BLOCK_DEV_PATH = "/dev/block/platform";
+    private static final String PLATFORM_BLOCK_DEV_PATH = "/dev/block/platform";
+    // Path to block devices enumerated by name.
+    private static final String BLOCK_BY_NAME_DEV_PATH = "/dev/block/by-name";
     // Temporary dir in device.
     private static final String DEVICE_TEMP_DIR = "/data/local/tmp/";
     // Path to device tree.
@@ -102,7 +104,9 @@ public class FirmwareDtboVerification extends BaseHostJUnit4Test {
         String currentDtboPartition = "dtbo" + slot_suffix;
         String[] options = {"-type", "l"};
         ArrayList<String> dtboPaths = TargetFileUtils.findFile(
-                BLOCK_DEV_PATH, currentDtboPartition, Arrays.asList(options), mDevice);
+                PLATFORM_BLOCK_DEV_PATH, currentDtboPartition, Arrays.asList(options), mDevice);
+        dtboPaths.addAll(TargetFileUtils.findFile(
+                BLOCK_BY_NAME_DEV_PATH, currentDtboPartition, Arrays.asList(options), mDevice));
         CLog.d("DTBO path %s", dtboPaths);
         Assert.assertFalse("Unable to find path to dtbo image on device.", dtboPaths.isEmpty());
         File hostDtboImage = new File(mTemptFolder, "dtbo");

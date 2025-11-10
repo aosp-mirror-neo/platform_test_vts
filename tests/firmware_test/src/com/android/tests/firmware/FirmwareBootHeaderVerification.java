@@ -46,14 +46,16 @@ import org.junit.runner.RunWith;
 public class FirmwareBootHeaderVerification extends BaseHostJUnit4Test {
     private static final int PLATFORM_API_LEVEL_P = 28;
     // Path to platform block devices.
-    private static final String BLOCK_DEV_PATH = "/dev/block/platform";
+    private static final String PLATFORM_BLOCK_DEV_PATH = "/dev/block/platform";
+    // Path to block devices enumerated by name.
+    private static final String BLOCK_BY_NAME_DEV_PATH = "/dev/block/by-name";
     // Indicates current slot suffix for A/B devices.
     private static final String PROPERTY_SLOT_SUFFIX = "ro.boot.slot_suffix";
     // Indicates the ACPIO index.
     private static final String PROPERTY_ACPIO_IDX = "ro.boot.acpio_idx";
 
     private ITestDevice mDevice;
-    private String mBlockDevPath = BLOCK_DEV_PATH;
+    private String mPlatformBlockDevPath = PLATFORM_BLOCK_DEV_PATH;
     private int mLaunchApiLevel;
     private String mSlotSuffix = null;
     private static File mTemptFolder = null;
@@ -79,7 +81,7 @@ public class FirmwareBootHeaderVerification extends BaseHostJUnit4Test {
 
     private boolean isFullfeelPrecondition() throws DeviceNotAvailableException {
         if (mSupportedAbis.contains("x86") || mSupportedAbis.contains("x86_64")) {
-            mBlockDevPath = "/dev/block";
+            mPlatformBlockDevPath = "/dev/block";
             String acpio_idx_string = mDevice.getProperty(PROPERTY_ACPIO_IDX);
             if (Strings.isNullOrEmpty(acpio_idx_string)) {
                 return false;
@@ -145,7 +147,9 @@ public class FirmwareBootHeaderVerification extends BaseHostJUnit4Test {
         String currentBootPartition = "boot" + mSlotSuffix;
         String[] options = {"-type", "l"};
         ArrayList<String> bootPaths = TargetFileUtils.findFile(
-                mBlockDevPath, currentBootPartition, Arrays.asList(options), mDevice);
+                mPlatformBlockDevPath, currentBootPartition, Arrays.asList(options), mDevice);
+        bootPaths.addAll(TargetFileUtils.findFile(
+                BLOCK_BY_NAME_DEV_PATH, currentBootPartition, Arrays.asList(options), mDevice));
         CLog.d("Boot path %s", bootPaths);
         Assert.assertFalse("Unable to find path to boot image on device.", bootPaths.isEmpty());
         File localBootImg = new File(mTemptFolder, "boot.img");
@@ -163,7 +167,9 @@ public class FirmwareBootHeaderVerification extends BaseHostJUnit4Test {
                 mSlotSuffix.equals(""));
         String[] options = {"-type", "l"};
         ArrayList<String> recoveryPaths = TargetFileUtils.findFile(
-                mBlockDevPath, "recovery", Arrays.asList(options), mDevice);
+                mPlatformBlockDevPath, "recovery", Arrays.asList(options), mDevice);
+        recoveryPaths.addAll(TargetFileUtils.findFile(
+                BLOCK_BY_NAME_DEV_PATH, "recovery", Arrays.asList(options), mDevice));
         CLog.d("Recovery path %s", recoveryPaths);
         Assert.assertFalse(
                 "Unable to find path to recovery image on device.", recoveryPaths.isEmpty());
