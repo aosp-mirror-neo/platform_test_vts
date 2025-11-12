@@ -16,6 +16,7 @@
 
 package com.google.android.angleallowlists.vts;
 
+import static com.android.tradefed.device.NativeDevice.INVALID_USER_ID;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -59,7 +60,7 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
     private Helper mTestHelper;
 
     // Multi-user system property
-    private String mCurrentUser;
+    private int mCurrentUser;
 
     // ANGLE trace app directory. The directory path is affected by the value of mCurrentUser
     private String mAngleTraceTestAppHomeDir;
@@ -209,8 +210,8 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
 
         // Cat the stdout file. This will be logged.
         helper.adbShellCommandCheck(Helper.WAIT_ADB_SHELL_FILE_OP_MILLIS,
-                String.format("run-as %s cat %s/files/out.txt", ANGLE_TRACE_TEST_PACKAGE_NAME,
-                        mAngleTraceTestAppHomeDir));
+                String.format("run-as %s --user %d cat %s/files/out.txt",
+                        ANGLE_TRACE_TEST_PACKAGE_NAME, mCurrentUser, mAngleTraceTestAppHomeDir));
     }
 
     /** Run angle_trace_tests app to get the list of traces */
@@ -222,22 +223,23 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
 
         // Remove previous stdout file on the device, if present.
         helper.adbShellCommandCheck(Helper.WAIT_ADB_SHELL_FILE_OP_MILLIS,
-                String.format("run-as %s rm -f %s/files/out.txt", ANGLE_TRACE_TEST_PACKAGE_NAME,
-                        mAngleTraceTestAppHomeDir));
+                String.format("run-as %s --user %d rm -f %s/files/out.txt",
+                        ANGLE_TRACE_TEST_PACKAGE_NAME, mCurrentUser, mAngleTraceTestAppHomeDir));
 
         // Check file has gone but the directory exists.
         helper.adbShellCommandCheck(Helper.WAIT_ADB_SHELL_FILE_OP_MILLIS,
-                String.format("run-as %s test ! -f %s/files/out.txt && run-as %s test -d %s",
-                        ANGLE_TRACE_TEST_PACKAGE_NAME, mAngleTraceTestAppHomeDir,
-                        ANGLE_TRACE_TEST_PACKAGE_NAME, mAngleTraceTestAppHomeDir));
+                String.format(
+                        "run-as %s --user %d test ! -f %s/files/out.txt && run-as %s --user %d test -d %s",
+                        ANGLE_TRACE_TEST_PACKAGE_NAME, mCurrentUser, mAngleTraceTestAppHomeDir,
+                        ANGLE_TRACE_TEST_PACKAGE_NAME, mCurrentUser, mAngleTraceTestAppHomeDir));
 
         // run angle_trace_tests app with --list-tests arg
         runAndBlockAngleTestApp(helper, "--list-tests");
 
         // pull the test output file
         helper.adbShellCommandWithStdout(Helper.WAIT_ADB_SHELL_FILE_OP_MILLIS, gtestStdoutFile,
-                String.format("run-as %s cat %s/files/out.txt", ANGLE_TRACE_TEST_PACKAGE_NAME,
-                        mAngleTraceTestAppHomeDir));
+                String.format("run-as %s --user %d cat %s/files/out.txt",
+                        ANGLE_TRACE_TEST_PACKAGE_NAME, mCurrentUser, mAngleTraceTestAppHomeDir));
 
         // Log it.
         helper.logTextFile("ListTraceOutput", gtestStdoutFile);
@@ -302,14 +304,15 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
 
         // Remove previous stdout file on the device, if present.
         helper.adbShellCommandCheck(Helper.WAIT_ADB_SHELL_FILE_OP_MILLIS,
-                String.format("run-as %s rm -f %s/files/out.txt", ANGLE_TRACE_TEST_PACKAGE_NAME,
-                        mAngleTraceTestAppHomeDir));
+                String.format("run-as %s --user %d rm -f %s/files/out.txt",
+                        ANGLE_TRACE_TEST_PACKAGE_NAME, mCurrentUser, mAngleTraceTestAppHomeDir));
 
         // Check file has gone but the directory exists.
         helper.adbShellCommandCheck(Helper.WAIT_ADB_SHELL_FILE_OP_MILLIS,
-                String.format("run-as %s test ! -f %s/files/out.txt && run-as %s test -d %s",
-                        ANGLE_TRACE_TEST_PACKAGE_NAME, mAngleTraceTestAppHomeDir,
-                        ANGLE_TRACE_TEST_PACKAGE_NAME, mAngleTraceTestAppHomeDir));
+                String.format(
+                        "run-as %s --user %d test ! -f %s/files/out.txt && run-as %s --user %d test -d %s",
+                        ANGLE_TRACE_TEST_PACKAGE_NAME, mCurrentUser, mAngleTraceTestAppHomeDir,
+                        ANGLE_TRACE_TEST_PACKAGE_NAME, mCurrentUser, mAngleTraceTestAppHomeDir));
 
         // Remove previous stdout file on the host, if present.
         // noinspection ResultOfMethodCallIgnored
@@ -320,8 +323,8 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
 
         // Clear blob cache
         helper.adbShellCommandCheck(Helper.WAIT_ADB_LARGE_FILE_OP_MILLIS,
-                String.format("run-as %s rm -rf %s", ANGLE_TRACE_TEST_PACKAGE_NAME,
-                        mAngleTraceTestBlobCacheDir));
+                String.format("run-as %s --user %d rm -rf %s", ANGLE_TRACE_TEST_PACKAGE_NAME,
+                        mCurrentUser, mAngleTraceTestBlobCacheDir));
 
         // Run the trace.
         switch (driverType) {
@@ -367,8 +370,8 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
 
         // cat the test output file
         helper.adbShellCommandWithStdout(Helper.WAIT_ADB_SHELL_FILE_OP_MILLIS, gtestStdoutFile,
-                String.format("run-as %s cat %s/files/out.txt", ANGLE_TRACE_TEST_PACKAGE_NAME,
-                        mAngleTraceTestAppHomeDir));
+                String.format("run-as %s --user %d cat %s/files/out.txt",
+                        ANGLE_TRACE_TEST_PACKAGE_NAME, mCurrentUser, mAngleTraceTestAppHomeDir));
 
         // Log it.
         helper.logTextFile(String.format("%s_stdout", testName), gtestStdoutFile);
@@ -558,15 +561,17 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
 
         // Query current_user
         final File cmdStdOutFile = new File(mTemporaryFolder.getRoot(), "cmdStdOut.txt");
-        mCurrentUser = mTestHelper.adbShellCommandWithStdout(
-                mTestHelper.WAIT_SET_GLOBAL_SETTING_MILLIS, cmdStdOutFile, "am get-current-user");
+        mCurrentUser = getDevice().getCurrentUser();
+        if (mCurrentUser == INVALID_USER_ID) {
+            fail("Failed to get current user, check host_log for details");
+        }
 
-        LogUtil.CLog.d("mCurrentUser is: %s", mCurrentUser);
+        LogUtil.CLog.d("mCurrentUser is: %d", mCurrentUser);
 
         mAngleTraceTestAppHomeDir =
-                String.format("/data/user/%s/com.android.angle.test", mCurrentUser);
+                String.format("/data/user/%d/com.android.angle.test", mCurrentUser);
         mAngleTraceTestBlobCacheDir =
-                String.format("/data/user_de/%s/com.android.angle.test/cache", mCurrentUser);
+                String.format("/data/user_de/%d/com.android.angle.test/cache", mCurrentUser);
 
         setANGLETracePackagePath();
 
