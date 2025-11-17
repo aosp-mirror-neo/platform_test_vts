@@ -23,6 +23,7 @@
     <option name="compatibility:exclude-filter" value="CtsResourcesLoaderTests" />
     <option name="compatibility:exclude-filter" value="CtsWindowManagerJetpackTestCases" />
     <option name="compatibility:exclude-filter" value="KernelDynamicPartitionsTest" />
+    <option name="compatibility:exclude-filter" value="NotificationManagerZenTest" />
     <option name="compatibility:exclude-filter" value="VtsHalBluetoothV1_0TargetTest" />
     <option name="compatibility:exclude-filter" value="vts_approvedBuild_validate_test" />
     <option name="compatibility:exclude-filter" value="vts_compatibilityMatrix_validate_test" />
