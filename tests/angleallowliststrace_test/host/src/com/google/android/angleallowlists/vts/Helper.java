@@ -325,7 +325,6 @@ public class Helper {
         try {
             return adbCommandCheck(WAIT_APP_UNINSTALL_MILLIS, "uninstall", appPackageName);
         } catch (final CommandException commandException) {
-            LogUtil.CLog.w(commandException);
             return commandException.getCommandResult();
         }
     }
