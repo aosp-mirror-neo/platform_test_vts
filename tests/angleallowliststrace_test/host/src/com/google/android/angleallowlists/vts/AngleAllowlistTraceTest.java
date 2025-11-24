@@ -466,6 +466,10 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
         return "true".equals(device.getProperty("ro.config.low_ram"));
     }
 
+    private boolean isANGLENativeDriver(ITestDevice device) throws Exception {
+        return "angle".equals(device.getProperty("ro.hardware.egl"));
+    }
+
     /**
      * Check if device supports vulkan 1.1.
      * If the device includes a Vulkan driver, feature list returned by
@@ -554,6 +558,10 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
         // the uninstallTestApps() in tearDown() needs the Helper object.
         mTestHelper = new Helper(getTestInformation(), mTemporaryFolder, mMetrics, mLogData,
                 mTestName.getMethodName());
+        // Skip this test if ANGLE is the native driver.
+        // There is no point comparing performance between ANGLE run and native run
+        // when ANGLE and native are the same driver.
+        Assume.assumeFalse(isANGLENativeDriver(getDevice()));
         Assume.assumeFalse(isLowRamDevice(getDevice()));
         Assume.assumeFalse(FeatureUtil.isTV(getDevice()));
         Assume.assumeTrue(isVulkan11Supported(getDevice()));
