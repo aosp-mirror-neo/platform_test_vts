@@ -16,6 +16,5 @@
 <configuration description="Run high ROI VTS sim_normal tests.">
     <include name="vts"/>
     <!-- VtsHalRadioTargetTest -->
-    <option name="compatibility:include-filter" value="VtsHalRadioTargetTest PerInstance/RadioDataTest#setUserDataEnabled/0_android_hardware_radio_data_IRadioData_slot1"/>
     <option name="compatibility:include-filter" value="VtsHalRadioTargetTest PerInstance/RadioDataTest#setupDataCall_trafficDescriptorConnectionCapability/0_android_hardware_radio_data_IRadioData_slot1"/>
 </configuration>
