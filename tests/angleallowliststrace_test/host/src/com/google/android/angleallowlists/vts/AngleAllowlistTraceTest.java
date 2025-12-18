@@ -21,7 +21,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.android.compatibility.common.util.FeatureUtil;
 import com.android.compatibility.common.util.PropertyUtil;
 import com.android.compatibility.common.util.VsrTest;
 import com.android.tradefed.config.Option;
@@ -563,7 +562,7 @@ public class AngleAllowlistTraceTest extends BaseHostJUnit4Test {
         // when ANGLE and native are the same driver.
         Assume.assumeFalse(isANGLENativeDriver(getDevice()));
         Assume.assumeFalse(isLowRamDevice(getDevice()));
-        Assume.assumeFalse(FeatureUtil.isTV(getDevice()));
+        Assume.assumeTrue(AngleTestDeviceCheck.isHandheld(getDevice()));
         Assume.assumeTrue(isVulkan11Supported(getDevice()));
         Assume.assumeTrue(isVendorAPILevelMeetingA16Requirement(getDevice()));
 
