@@ -20,7 +20,6 @@ import static org.junit.Assume.assumeFalse;
 import static org.junit.Assume.assumeTrue;
 
 import com.android.compatibility.common.util.ApiLevelUtil;
-import com.android.compatibility.common.util.GmsTest;
 import com.android.compatibility.common.util.PropertyUtil;
 import com.android.compatibility.common.util.VsrTest;
 import com.android.tradefed.testtype.DeviceJUnit4ClassRunner;
@@ -83,6 +82,60 @@ public class GpuProfilingTest extends BaseHostJUnit4Test {
 
         assertTrue("API level S must support GPU profiling",
                 PropertyUtil.propertyEquals(getDevice(), "graphics.gpu.profiler.support", "true"));
+    }
+
+    /**
+     * Devices launched in Android 17 and beyond must support GPU profiling capabilities.
+     */
+    @VsrTest(requirements = {"GMS-VSR-5.1-002", "GMS-VSR-5.1-002.001", "GMS-VSR-5.1-002.002",
+                     "GMS-VSR-5.1-002.003", "GMS-VSR-5.1-002.004", "GMS-VSR-5.1-002.005",
+                     "GMS-VSR-5.1-002.006", "GMS-VSR-5.1-002.007"})
+    @Test
+    public void checkGpuProfilingRequirementsAndroid17() throws Exception {
+        // Only test for 64-bits devices launched in Android 17 and above.
+        assumeTrue("Test does not apply for API level lower than 202604",
+                mustChipsetMeetA17Requirement());
+        assumeTrue("Test does not apply for 32-bits devices",
+                getDevice().getProperty("ro.product.cpu.abi").contains("64"));
+        assumeTrue("Test only applies for handheld and PC devices",
+                Util.isHandheld(getDevice()) || Util.isPC(getDevice()));
+        assumeFalse(
+                "Test does not apply for devices with only CPU Vulkan support", hasOnlyCpuDevice());
+        assumeFalse("Test does not apply for devices with only virtual GPU Vulkan support",
+                hasOnlyVirtualGpuDevice());
+
+        assertTrue("Vendor API level 202604 onwards must support GPU profiling",
+                PropertyUtil.propertyEquals(getDevice(), "graphics.gpu.profiler.support", "true"));
+        assertTrue("Vendor API level 202604 onwards must support GPU frequency reporting",
+                PropertyUtil.propertyEquals(
+                        getDevice(), "graphics.gpu.profiler.support.gpu_frequency", "true"));
+        assertTrue("Vendor API level 202604 onwards must support GPU counters",
+                PropertyUtil.propertyEquals(
+                        getDevice(), "graphics.gpu.profiler.support.gpu_counters", "true"));
+        assertTrue("Vendor API level 202604 onwards must support GPU counter groups",
+                PropertyUtil.propertyEquals(
+                        getDevice(), "graphics.gpu.profiler.support.gpu_counters.groups", "true"));
+        assertTrue("Vendor API level 202604 onwards must support GPU counter sampling period",
+                PropertyUtil.propertyEquals(
+                        getDevice(), "graphics.gpu.profiler.support.gpu_counters.period", "true"));
+        assertTrue("Vendor API level 202604 onwards must support GPU counter zeroes optimization",
+                PropertyUtil.propertyEquals(getDevice(),
+                        "graphics.gpu.profiler.support.gpu_counters.zeroes_optimization", "true"));
+        assertTrue("Vendor API level 202604 onwards must support GPU render stages",
+                PropertyUtil.propertyEquals(
+                        getDevice(), "graphics.gpu.profiler.support.render_stages", "true"));
+        assertTrue(
+                "Vendor API level 202604 onwards must support GPU render stages ans queue submits",
+                PropertyUtil.propertyEquals(getDevice(),
+                        "graphics.gpu.profiler.support.render_stages.queue_submits", "true"));
+    }
+
+    private boolean mustChipsetMeetA17Requirement() throws Exception {
+        // All SoCs starting or restarting GRF with A17, or not in GRF
+        final long boardFirstApiLevel = getDevice().getIntProperty("ro.board.first_api_level", 0);
+        final long boardApiLevel = getDevice().getIntProperty("ro.board.api_level", 0);
+
+        return boardApiLevel >= Build.VENDOR_26Q2 || boardFirstApiLevel >= Build.VENDOR_26Q2;
     }
 
     private boolean hasOnlyCpuDevice() throws Exception {
