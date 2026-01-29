@@ -92,11 +92,9 @@ public class GpuProfilingTest extends BaseHostJUnit4Test {
                      "GMS-VSR-5.1-002.006", "GMS-VSR-5.1-002.007"})
     @Test
     public void checkGpuProfilingRequirementsAndroid17() throws Exception {
-        // Only test for 64-bits devices launched in Android 17 and above.
+        // Only test for devices launched in Android 17 and above.
         assumeTrue("Test does not apply for API level lower than 202604",
                 mustChipsetMeetA17Requirement());
-        assumeTrue("Test does not apply for 32-bits devices",
-                getDevice().getProperty("ro.product.cpu.abi").contains("64"));
         assumeTrue("Test only applies for handheld and PC devices",
                 Util.isHandheld(getDevice()) || Util.isPC(getDevice()));
         assumeFalse(
