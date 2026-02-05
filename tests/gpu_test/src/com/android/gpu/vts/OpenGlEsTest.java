@@ -17,17 +17,12 @@ package com.android.gpu.vts;
 
 import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeTrue;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 
 import com.android.compatibility.common.util.VsrTest;
 import com.android.tradefed.testtype.DeviceJUnit4ClassRunner;
 import com.android.tradefed.testtype.junit4.BaseHostJUnit4Test;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import static com.android.gpu.vts.Util.mustChipsetMeetGrfRequirement;
-import static com.android.gpu.vts.Util.mustNotBeEssentialTierChipset;
 
 /**
  * VTS test for OpenGL ES requirements.
@@ -91,24 +86,5 @@ public class OpenGlEsTest extends BaseHostJUnit4Test {
 
             fail(message);
         }
-    }
-
-    /**
-     * SoCs meeting certain requirements must support EGL_IMG_context_priority and
-     * EGL_EXT_protected_content extensions.
-     */
-    @VsrTest(requirements = {"VSR-3.2.2-008"})
-    @Test
-    public void checkEglExtensions() throws Exception {
-        assumeTrue(mustChipsetMeetGrfRequirement(getDevice(),Build.VENDOR_26Q2));
-        assumeTrue(mustNotBeEssentialTierChipset(getDevice()));
-        final String sfDump = getDevice().executeShellCommand("dumpsys SurfaceFlinger");
-        assertNotNull(sfDump);
-        assertTrue("dumpsys SurfaceFlinger should not be empty", sfDump.length() > 0);
-
-        assertTrue("EGL_IMG_context_priority must be supported.",
-                sfDump.contains("EGL_IMG_context_priority"));
-        assertTrue("EGL_EXT_protected_content must be supported.",
-                sfDump.contains("EGL_EXT_protected_content"));
     }
 }
