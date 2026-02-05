@@ -123,9 +123,9 @@ public class GpuProfilingTest extends BaseHostJUnit4Test {
                 PropertyUtil.propertyEquals(
                         getDevice(), "graphics.gpu.profiler.support.render_stages", "true"));
         assertTrue(
-                "Vendor API level 202604 onwards must support GPU render stages ans queue submits",
+                "Vendor API level 202604 onwards must support GPU render stages and queue submits",
                 PropertyUtil.propertyEquals(getDevice(),
-                        "graphics.gpu.profiler.support.render_stages.queue_submits", "true"));
+                        "graphics.gpu.profiler.support.render_stages.queue_submit", "true"));
     }
 
     private boolean mustChipsetMeetA17Requirement() throws Exception {
