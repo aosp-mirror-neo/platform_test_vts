@@ -49,20 +49,4 @@ public class Util {
     public static boolean isPC(final ITestDevice device) throws DeviceNotAvailableException {
         return FeatureUtil.hasSystemFeature(device, FEATURE_PC);
     }
-
-    public static boolean mustChipsetMeetGrfRequirement(final ITestDevice device, int requiredApiLevel)
-            throws DeviceNotAvailableException {
-        final long boardFirstApiLevel = device.getIntProperty("ro.board.first_api_level", 0);
-        final long boardApiLevel = device.getIntProperty("ro.board.api_level", 0);
-
-        return boardApiLevel >= requiredApiLevel || boardFirstApiLevel >= requiredApiLevel;
-    }
-
-    public static boolean mustNotBeEssentialTierChipset(final ITestDevice device)
-            throws DeviceNotAvailableException {
-        if (device.getBooleanProperty("ro.soc.et", false)) {
-            return false;
-        }
-        return true;
-    }
 }
