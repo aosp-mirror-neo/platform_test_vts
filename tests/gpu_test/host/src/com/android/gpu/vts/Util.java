@@ -50,8 +50,8 @@ public class Util {
         return FeatureUtil.hasSystemFeature(device, FEATURE_PC);
     }
 
-    public static boolean mustChipsetMeetGrfRequirement(final ITestDevice device, int requiredApiLevel)
-            throws DeviceNotAvailableException {
+    public static boolean mustChipsetMeetGrfRequirement(
+            final ITestDevice device, int requiredApiLevel) throws DeviceNotAvailableException {
         final long boardFirstApiLevel = device.getIntProperty("ro.board.first_api_level", 0);
         final long boardApiLevel = device.getIntProperty("ro.board.api_level", 0);
 
