@@ -83,6 +83,8 @@ public class VulkanTest extends BaseHostJUnit4Test {
     // the string to parse to confirm that Skia is using vulkan
     private static final String SKIA_PIPELINE = "Pipeline=Skia";
     private static final String SKIA_VULKAN_PIPELINE = "Pipeline=Skia (Vulkan)";
+    private static final String SKIA_GRAPHITE_VULKAN = "RE Vulkan (Graphite)";
+    private static final String SKIA_GANESH_VULKAN = "RE Vulkan (Ganesh)";
 
     private JSONObject[] mVulkanDevices;
     private JSONObject mVulkanProfiles;
@@ -485,6 +487,64 @@ public class VulkanTest extends BaseHostJUnit4Test {
                         "Chipsets starting or restarting GRF with A17 must support global_priority",
                         extGlobalPriority || khrGlobalPriority);
         }
+    }
+
+    /**
+     * All Handheld SoCs starting or restarting GRF with A17 (except for Essential Tier SoCs) must
+     * use Skia's Graphite Vulkan backend with RenderEngine.
+     */
+    @VsrTest(requirements = {"VSR-3.2.1-017"})
+    @Test
+    public void checkSkiaREVulkanSupportHandheld() throws Exception {
+        assumeTrue(mustChipsetMeetGrfRequirement(getDevice(), Build.VENDOR_26Q2));
+        assumeTrue(mustNotBeEssentialTierChipset(getDevice()));
+        assumeTrue(mustMeetFirstApiLevel33OrHigher());
+        assumeTrue(
+                "Include new graphics requirements for handheld devices", isHandheld(getDevice()));
+
+        String reLine = getRenderEngineLine();
+
+        // For handheld devices, only the Graphite backend is required. If the test fails,
+        // the extracted RenderEngine line will be printed to provide more context for the failure.
+        assertTrue(reLine, reLine.contains(SKIA_GRAPHITE_VULKAN));
+    }
+
+    /**
+     * All PC SoCs starting or restarting GRF with A17 (except for Essential Tier SoCs) must use
+     * Skia's Vulkan backend (either Graphite or Ganesh) with RenderEngine.
+     */
+    @VsrTest(requirements = {"VSR-3.2.1-017"})
+    @Test
+    public void checkSkiaREVulkanSupportPC() throws Exception {
+        assumeTrue(mustChipsetMeetGrfRequirement(getDevice(), Build.VENDOR_26Q2));
+        assumeTrue(mustNotBeEssentialTierChipset(getDevice()));
+        assumeTrue(mustMeetFirstApiLevel33OrHigher());
+        assumeTrue("Include new graphics requirements for PC devices", isPC(getDevice()));
+
+        String reLine = getRenderEngineLine();
+
+        // For PC devices, either the Graphite or Ganesh Vulkan backend is acceptable for Skia's
+        // RenderEngine. If the test fails, the extracted RenderEngine line will be printed to
+        // provide more context for the failure.
+        assertTrue(reLine,
+                reLine.contains(SKIA_GRAPHITE_VULKAN) || reLine.contains(SKIA_GANESH_VULKAN));
+    }
+
+    private String getRenderEngineLine() throws Exception {
+        final String sfDump = getDevice().executeShellCommand("dumpsys SurfaceFlinger");
+        assertNotNull(sfDump);
+        assertTrue(sfDump.length() > 0);
+
+        // Extract the RenderEngine (-RE) line from the SurfaceFlinger dump
+        String reLine = "The device is not using Skia's Vulkan backend with RenderEngine.";
+        String[] lines = sfDump.split(System.getProperty("line.separator"));
+        for (String line : lines) {
+            if (line.contains("-RE")) {
+                reLine = line.trim();
+                break;
+            }
+        }
+        return reLine;
     }
 
     private boolean hasExtension(JSONObject device, String name, int minVersion) throws Exception {
