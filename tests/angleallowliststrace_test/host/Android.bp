@@ -36,12 +36,3 @@ java_test_helper_library {
     name: "AngleAllowlistLibrary",
     srcs: ["src/com/google/android/angleallowlists/vts/AngleAllowlist.java"],
 }
-
-java_library_host {
-    name: "AngleTestDeviceCheckUtil",
-    srcs: ["src/com/google/android/angleallowlists/vts/AngleTestDeviceCheck.java"],
-    libs: [
-        "compatibility-host-util",
-        "tradefed",
-    ]
-}
