@@ -16,8 +16,10 @@
 package com.android.gpu.vts;
 
 import static org.junit.Assert.fail;
+import static org.junit.Assume.assumeFalse;
 import static org.junit.Assume.assumeTrue;
 
+import com.android.compatibility.common.util.FeatureUtil;
 import com.android.compatibility.common.util.VsrTest;
 import com.android.tradefed.testtype.DeviceJUnit4ClassRunner;
 import com.android.tradefed.testtype.junit4.BaseHostJUnit4Test;
@@ -39,6 +41,7 @@ public class OpenGlEsTest extends BaseHostJUnit4Test {
         final int apiLevel = Util.getVendorApiLevelOrFirstProductApiLevel(getDevice());
 
         assumeTrue("Test does not apply for API level lower than S", apiLevel >= Build.SC);
+        assumeFalse("Exclude new graphics requirements for TV", FeatureUtil.isTV(getDevice()));
 
         // Map from API level to required dEQP level.
         final int requiredOpenGlEsDeqpLevel;
