@@ -1,4 +1,4 @@
-// Copyright (C) 2025 The Android Open Source Project
+// Copyright (C) 2023 The Android Open Source Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,25 +14,23 @@
 
 package {
     default_team: "trendy_team_android_gpu",
-    // See: http://go/android-license-faq
     default_applicable_licenses: ["Android-Apache-2.0"],
 }
 
 java_test_host {
-    name: "AngleAllowlistTraceTest",
-    srcs: ["src/**/*.java"],
-    test_suites: ["vts"],
+    name: "VtsGpuTests",
     libs: [
-        "compatibility-host-util",
         "compatibility-tradefed",
         "tradefed",
+        "compatibility-host-util",
+    ],
+    srcs: ["src/**/*.java"],
+    test_suites: [
+        "dts",
+        "general-tests",
+        "vts",
     ],
     device_common_data: [
-        ":VtsAngleTestApp",
+        ":VtsGpuTestApp",
     ],
-}
-
-java_test_helper_library {
-    name: "AngleAllowlistLibrary",
-    srcs: ["src/com/google/android/angleallowlists/vts/AngleAllowlist.java"],
 }
