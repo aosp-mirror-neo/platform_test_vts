@@ -78,7 +78,9 @@ public class EglTest extends BaseHostJUnit4Test {
 
     @After
     public void tearDown() throws Exception {
-        uninstallTestApps();
+        if (mTestHelper != null) {
+            uninstallTestApps();
+        }
     }
 
     /**
