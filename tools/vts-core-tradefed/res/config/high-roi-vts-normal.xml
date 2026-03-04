@@ -2381,6 +2381,8 @@
     <!-- Exclude the failing tests in VtsGpuTests -->
     <option name="compatibility:exclude-filter" value="VtsGpuTests com.android.gpu.vts.EglTest#checkEglContextPrioritySupport"/>
     <option name="compatibility:exclude-filter" value="VtsGpuTests com.android.gpu.vts.VulkanTest#checkSkiaREVulkanSupportHandheld"/>
+    <!-- Exclude the failing tests in VtsHalWifiKeystoreV1_0TargetTest -->
+    <option name="compatibility:exclude-filter" value="VtsHalWifiKeystoreV1_0TargetTest PerInstance/WifiKeystoreHalTest#Sign_nullptr_key_name/0_default"/>
     <!-- Exclude the failing tests in VtsUsbTypecTest -->
     <option name="compatibility:exclude-filter" value="VtsUsbTypecTest com.android.tests.usbtypec.VtsUsbTypecTest#testTypecPortsAndChildrenHaveSelinuxLabel"/>
 </configuration>
