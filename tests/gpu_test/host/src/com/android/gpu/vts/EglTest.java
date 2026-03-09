@@ -22,11 +22,14 @@ import static org.junit.Assert.fail;
 import static org.junit.Assume.assumeFalse;
 import static org.junit.Assume.assumeTrue;
 
+import com.android.compatibility.common.util.ApiLevelUtil;
 import com.android.compatibility.common.util.VsrTest;
 import com.android.tradefed.log.LogUtil;
 import com.android.tradefed.testtype.DeviceJUnit4ClassRunner;
 import com.android.tradefed.testtype.junit4.BaseHostJUnit4Test;
 import com.android.tradefed.util.RunUtil;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -50,9 +53,11 @@ public class EglTest extends BaseHostJUnit4Test {
     // Package install attempts and intervals before install retries
     private static final int NUM_ATTEMPTS = 5;
     private static final int APP_INSTALL_REATTEMPT_SLEEP_MSEC = 500;
+    private static final int VK_PHYSICAL_DEVICE_TYPE_CPU = 4;
 
     // Object that invokes adb commands and interacts with test devices
     private Helper mTestHelper;
+    private JSONObject[] mVulkanDevices;
 
     @Rule public final TemporaryFolder mTemporaryFolder = new TemporaryFolder();
 
@@ -74,6 +79,19 @@ public class EglTest extends BaseHostJUnit4Test {
         // the uninstallTestApps() in tearDown() needs the Helper object.
         mTestHelper = new Helper(getTestInformation(), mTemporaryFolder, mMetrics, mLogData,
                 mTestName.getMethodName());
+
+        final String output = getDevice().executeShellCommand("cmd gpu vkjson");
+        final JSONArray vkjson;
+        // vkjson output in Android N is JSONArray.
+        if (ApiLevelUtil.isBefore(getDevice(), Build.OC)) {
+            vkjson = (new JSONArray(output));
+        } else {
+            vkjson = (new JSONObject(output)).getJSONArray("devices");
+        }
+        mVulkanDevices = new JSONObject[vkjson.length()];
+        for (int i = 0; i < vkjson.length(); i++) {
+            mVulkanDevices[i] = vkjson.getJSONObject(i);
+        }
     }
 
     @After
@@ -119,6 +137,10 @@ public class EglTest extends BaseHostJUnit4Test {
     @VsrTest(requirements = {"VSR-3.2.2-008"})
     @Test
     public void checkEglContextPrioritySupport() throws Throwable {
+        if (hasOnlyCpuDevice()) {
+            return;
+        }
+
         assumeTrue(mustChipsetMeetGrfRequirement(getDevice(), Build.VENDOR_26Q2));
         assumeTrue(mustNotBeEssentialTierChipset(getDevice()));
         assumeTrue("Android17 Graphics requirements for handheld devices & PC",
@@ -127,5 +149,15 @@ public class EglTest extends BaseHostJUnit4Test {
         installTestApp(GPU_TEST_APP);
 
         runDeviceTests(GPU_TEST_PKG, GPU_TEST_PKG + "." + GPU_TEST_CLASS, GPU_TEST_LOCATION_METHOD);
+    }
+
+    private boolean hasOnlyCpuDevice() throws Exception {
+        for (JSONObject device : mVulkanDevices) {
+            if (device.getJSONObject("properties").getInt("deviceType")
+                    != VK_PHYSICAL_DEVICE_TYPE_CPU) {
+                return false;
+            }
+        }
+        return true;
     }
 }
