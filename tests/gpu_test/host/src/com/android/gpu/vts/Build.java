@@ -51,6 +51,11 @@ public class Build {
     public static final int SC_V2 = 32; // provisional
     public static final int TM = 33; // provisional
     public static final int UDC = 34; // provisional
+
+    public static final int VIC = 35; // Vanilla Ice Cream
+    public static final int BAK = 36; // Baklava
+    public static final int CB = 37; // Cinnamon Bun
+
     // vendor api levels are decoupled from the SDK version in Android VIC
     // Levels are named after the first platform release to employ them.
     public static final int VENDOR_24Q2 = 202404;

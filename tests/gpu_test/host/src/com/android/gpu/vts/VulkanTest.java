@@ -498,7 +498,7 @@ public class VulkanTest extends BaseHostJUnit4Test {
     public void checkSkiaREVulkanSupportHandheld() throws Exception {
         assumeTrue(mustChipsetMeetGrfRequirement(getDevice(), Build.VENDOR_26Q2));
         assumeTrue(mustNotBeEssentialTierChipset(getDevice()));
-        assumeTrue(mustMeetFirstApiLevel33OrHigher());
+        assumeTrue(mustMeetFirstApiLevel37OrHigher());
         assumeTrue(
                 "Include new graphics requirements for handheld devices", isHandheld(getDevice()));
 
@@ -518,7 +518,7 @@ public class VulkanTest extends BaseHostJUnit4Test {
     public void checkSkiaREVulkanSupportPC() throws Exception {
         assumeTrue(mustChipsetMeetGrfRequirement(getDevice(), Build.VENDOR_26Q2));
         assumeTrue(mustNotBeEssentialTierChipset(getDevice()));
-        assumeTrue(mustMeetFirstApiLevel33OrHigher());
+        assumeTrue(mustMeetFirstApiLevel37OrHigher());
         assumeTrue("Include new graphics requirements for PC devices", isPC(getDevice()));
 
         String reLine = getRenderEngineLine();
@@ -646,5 +646,10 @@ public class VulkanTest extends BaseHostJUnit4Test {
     private boolean mustMeetFirstApiLevel33OrHigher() throws Exception {
         long firstApiLevel = getDevice().getIntProperty("ro.product.first_api_level", 0);
         return firstApiLevel >= Build.TM;
+    }
+
+    private boolean mustMeetFirstApiLevel37OrHigher() throws Exception {
+        long firstApiLevel = getDevice().getIntProperty("ro.product.first_api_level", 0);
+        return firstApiLevel >= Build.CB;
     }
 }
