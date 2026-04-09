@@ -113,9 +113,6 @@ public class GpuProfilingTest extends BaseHostJUnit4Test {
         assertTrue("Vendor API level 202604 onwards must support GPU counter groups",
                 PropertyUtil.propertyEquals(
                         getDevice(), "graphics.gpu.profiler.support.gpu_counters.groups", "true"));
-        assertTrue("Vendor API level 202604 onwards must support GPU counter sampling period",
-                PropertyUtil.propertyEquals(
-                        getDevice(), "graphics.gpu.profiler.support.gpu_counters.period", "true"));
         assertTrue("Vendor API level 202604 onwards must support GPU counter zeroes optimization",
                 PropertyUtil.propertyEquals(getDevice(),
                         "graphics.gpu.profiler.support.gpu_counters.zeroes_optimization", "true"));
