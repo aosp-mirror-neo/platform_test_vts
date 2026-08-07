@@ -166,7 +166,7 @@ public class FirmwareDtboVerification extends BaseHostJUnit4Test {
                             && (compression_format != GZIP_COMPRESSION)) {
                         Assert.assertEquals(
                                 String.format("Unknown compression format %d", compression_format),
-                                compression_format, NO_COMPRESSION);
+                                NO_COMPRESSION, compression_format);
                     }
                     try (InputStream fileInputStream = new FileInputStream(dt_entry_file)) {
                         byte[] cpio_header = new byte[6];
@@ -192,7 +192,7 @@ public class FirmwareDtboVerification extends BaseHostJUnit4Test {
                                 ByteBuffer.wrap(cpio_header).order(ByteOrder.BIG_ENDIAN).getInt();
                         CLog.d("fdt_magic: 0x%s", Integer.toHexString(fdt_magic));
                         Assert.assertEquals(
-                                "Bad FDT(Flattened Device Tree) Format", fdt_magic, FDT_MAGIC);
+                                "Bad FDT(Flattened Device Tree) Format", FDT_MAGIC, fdt_magic);
                     }
                 }
             }
@@ -230,12 +230,12 @@ public class FirmwareDtboVerification extends BaseHostJUnit4Test {
             cmdResult = mDevice.executeShellV2Command(cmdline_cmd);
             Assert.assertEquals(
                     String.format("Checking kernel dtbo index: %s", cmdResult.getStderr()),
-                    cmdResult.getExitCode().intValue(), 0);
+                    0, cmdResult.getExitCode().intValue());
             overlay_idx_string = cmdResult.getStdout().replace("\n", "");
             CLog.d("overlay_idx_string=%s", overlay_idx_string);
             Assert.assertNotEquals(
                     "Bootconfig and kernel command line missing androidboot.dtbo_idx",
-                    overlay_idx_string.length(), 0);
+                    0, overlay_idx_string.length());
         }
 
         String verificationTestPath = null;
@@ -251,15 +251,15 @@ public class FirmwareDtboVerification extends BaseHostJUnit4Test {
         String chmodCommand = String.format("chmod 755 %s", verificationTestPath);
         CLog.d(chmodCommand);
         cmdResult = mDevice.executeShellV2Command(chmodCommand);
-        Assert.assertEquals("Unable to chmod:" + cmdResult.getStderr(), cmdResult.getStatus(),
-                CommandStatus.SUCCESS);
+        Assert.assertEquals("Unable to chmod:" + cmdResult.getStderr(), CommandStatus.SUCCESS,
+                cmdResult.getStatus());
         String ufdtVerifierParent = new File(verificationTestPath).getParent();
         String remoteFinalDTPath = new File(ufdtVerifierParent, "final_dt").getAbsolutePath();
         String copyCommand = String.format("cp %s %s", FDT_PATH, remoteFinalDTPath);
         CLog.d(copyCommand);
         cmdResult = mDevice.executeShellV2Command(String.format(copyCommand));
-        Assert.assertEquals("Unable to copy to " + remoteFinalDTPath, cmdResult.getStatus(),
-                CommandStatus.SUCCESS);
+        Assert.assertEquals("Unable to copy to " + remoteFinalDTPath, CommandStatus.SUCCESS,
+                cmdResult.getStatus());
         ArrayList<String> overlayArg = new ArrayList<>();
         for (String overlay_idx : overlay_idx_string.split(",")) {
             String overlayFileName = "dumped_dtbo." +
@@ -278,6 +278,6 @@ public class FirmwareDtboVerification extends BaseHostJUnit4Test {
         CLog.d(verifyCmd);
         cmdResult = mDevice.executeShellV2Command(verifyCmd);
         Assert.assertEquals("Incorrect Overlay Application:" + cmdResult.getStderr(),
-                cmdResult.getStatus(), CommandStatus.SUCCESS);
+                CommandStatus.SUCCESS, cmdResult.getStatus());
     }
 }
